@@ -18,8 +18,8 @@
                     </a>
                 </div>
                 <div class="col-auto">
-                    <a href="" class="btn btn-link-default">
-                        <i class="material-icons">chat</i>
+                    <a href="/myProduct" class="btn btn-link-default">
+                        <i class="material-icons">work</i>
                     </a>
                 </div>
                 <div class="col-auto">

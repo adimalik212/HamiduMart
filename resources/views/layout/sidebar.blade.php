@@ -40,7 +40,7 @@
                 <a href="/store" class="list-group-item list-group-item-action">Store</a>
                 <a href="/myCart" class="list-group-item list-group-item-action">My Cart</a>
                 <a href="/profile" class="list-group-item list-group-item-action">My Profile</a>
-                {{-- <a href="controls.html" class="list-group-item list-group-item-action">Pages Controls <span class="badge badge-light ml-2">Check</span></a> --}}
+                <a href="/myProduct" class="list-group-item list-group-item-action">My Product</a>
                 {{-- <a href="setting.html" class="list-group-item list-group-item-action">Settings</a> --}}
                 <a href="/" class="list-group-item list-group-item-action mt-4">Logout</a>
             </div>

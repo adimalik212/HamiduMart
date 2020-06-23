@@ -28,4 +28,6 @@ route::group([], function () {
   Route::get('myCart',function(){return view('page/store/myCart');});
   Route::get('bayar',function(){return view('page/store/bayar');});
   Route::get('tankyou',function(){return view('page/store/tankyou');});
+  Route::get('detil',function(){return view('page/store/detil');});
+  Route::get('myProduct',function(){return view('page/store/myProduct');});
 });

@@ -25,7 +25,7 @@
 
                         <figure class="product-image"><img src="img/apple.png" alt="" class=""></figure>
 
-                        <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">Red Apple </a>
+                        <a href="/detil" class="text-dark mb-1 mt-2 h6 d-block">Red Apple </a>
                         <p class="text-secondary small mb-2">Imported from Simla</p>
                         <h5 class="text-success font-weight-normal mb-0">$ 120<sup>.00</sup></h5>
                         <p class="text-secondary small text-mute mb-0">1.0 kg</p>
@@ -41,7 +41,7 @@
 
                         <figure class="product-image"><img src="img/grapes2.png" alt="" class=""></figure>
 
-                        <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">Green Grapes</a>
+                        <a href="/detil" class="text-dark mb-1 mt-2 h6 d-block">Green Grapes</a>
                         <p class="text-secondary small mb-2">Chilled fresh</p>
                         <h5 class="text-success font-weight-normal mb-0">$ 100<sup>.00</sup></h5>
                         <p class="text-secondary small text-mute mb-0">1.0 kg</p>
@@ -57,7 +57,7 @@
 
                         <figure class="product-image"><img src="img/orange-2.png" alt="" class=""></figure>
 
-                        <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">Orange</a>
+                        <a href="/detil" class="text-dark mb-1 mt-2 h6 d-block">Orange</a>
                         <p class="text-secondary small mb-2">Sweet and Juicy</p>
                         <h5 class="text-success font-weight-normal mb-0">$ 120<sup>.00</sup></h5>
                         <p class="text-secondary small text-mute mb-0">1.0 kg</p>
@@ -73,7 +73,7 @@
 
                         <figure class="product-image"><img src="img/orange-small.png" alt="" class=""></figure>
 
-                        <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">Lemon</a>
+                        <a href="/detil" class="text-dark mb-1 mt-2 h6 d-block">Lemon</a>
                         <p class="text-secondary small mb-2">Most Demanded</p>
                         <h5 class="text-success font-weight-normal mb-0">$ 120<sup>.00</sup></h5>
                         <p class="text-secondary small text-mute mb-0">1.0 kg</p>
@@ -89,7 +89,7 @@
 
                         <figure class="product-image"><img src="img/apple.png" alt="" class=""></figure>
 
-                        <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">Red Apple </a>
+                        <a href="/detil" class="text-dark mb-1 mt-2 h6 d-block">Red Apple </a>
                         <p class="text-secondary small mb-2">Imported from Simla</p>
                         <h5 class="text-success font-weight-normal mb-0">$ 120<sup>.00</sup></h5>
                         <p class="text-secondary small text-mute mb-0">1.0 kg</p>
@@ -105,7 +105,7 @@
 
                         <figure class="product-image"><img src="img/grapes2.png" alt="" class=""></figure>
 
-                        <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">Green Grapes</a>
+                        <a href="/detil" class="text-dark mb-1 mt-2 h6 d-block">Green Grapes</a>
                         <p class="text-secondary small mb-2">Chilled fresh</p>
                         <h5 class="text-success font-weight-normal mb-0">$ 100<sup>.00</sup></h5>
                         <p class="text-secondary small text-mute mb-0">1.0 kg</p>
@@ -121,7 +121,7 @@
 
                         <figure class="product-image"><img src="img/apple.png" alt="" class=""></figure>
 
-                        <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">Red Apple </a>
+                        <a href="/detil" class="text-dark mb-1 mt-2 h6 d-block">Red Apple </a>
                         <p class="text-secondary small mb-2">Imported from Simla</p>
                         <h5 class="text-success font-weight-normal mb-0">$ 120<sup>.00</sup></h5>
                         <p class="text-secondary small text-mute mb-0">1.0 kg</p>
@@ -137,7 +137,7 @@
 
                         <figure class="product-image"><img src="img/grapes2.png" alt="" class=""></figure>
 
-                        <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">Green Grapes</a>
+                        <a href="/detil" class="text-dark mb-1 mt-2 h6 d-block">Green Grapes</a>
                         <p class="text-secondary small mb-2">Chilled fresh</p>
                         <h5 class="text-success font-weight-normal mb-0">$ 100<sup>.00</sup></h5>
                         <p class="text-secondary small text-mute mb-0">1.0 kg</p>
@@ -153,7 +153,7 @@
 
                         <figure class="product-image"><img src="img/orange-2.png" alt="" class=""></figure>
 
-                        <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">Orange</a>
+                        <a href="/detil" class="text-dark mb-1 mt-2 h6 d-block">Orange</a>
                         <p class="text-secondary small mb-2">Sweet and Juicy</p>
                         <h5 class="text-success font-weight-normal mb-0">$ 120<sup>.00</sup></h5>
                         <p class="text-secondary small text-mute mb-0">1.0 kg</p>
@@ -169,7 +169,7 @@
 
                         <figure class="product-image"><img src="img/orange-small.png" alt="" class=""></figure>
 
-                        <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">Lemon</a>
+                        <a href="/detil" class="text-dark mb-1 mt-2 h6 d-block">Lemon</a>
                         <p class="text-secondary small mb-2">Most Demanded</p>
                         <h5 class="text-success font-weight-normal mb-0">$ 120<sup>.00</sup></h5>
                         <p class="text-secondary small text-mute mb-0">1.0 kg</p>
@@ -185,7 +185,7 @@
 
                         <figure class="product-image"><img src="img/apple.png" alt="" class=""></figure>
 
-                        <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">Red Apple </a>
+                        <a href="/detil" class="text-dark mb-1 mt-2 h6 d-block">Red Apple </a>
                         <p class="text-secondary small mb-2">Imported from Simla</p>
                         <h5 class="text-success font-weight-normal mb-0">$ 120<sup>.00</sup></h5>
                         <p class="text-secondary small text-mute mb-0">1.0 kg</p>
@@ -201,7 +201,7 @@
 
                         <figure class="product-image"><img src="img/grapes2.png" alt="" class=""></figure>
 
-                        <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">Green Grapes</a>
+                        <a href="/detil" class="text-dark mb-1 mt-2 h6 d-block">Green Grapes</a>
                         <p class="text-secondary small mb-2">Chilled fresh</p>
                         <h5 class="text-success font-weight-normal mb-0">$ 100<sup>.00</sup></h5>
                         <p class="text-secondary small text-mute mb-0">1.0 kg</p>

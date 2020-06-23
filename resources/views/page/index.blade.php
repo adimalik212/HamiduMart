@@ -16,7 +16,7 @@
                                     <img src="img/orange.png" alt="" class="small-slide-right">
                                     <div class="col-8">
                                         <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
-                                        <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">Citrus </a>
+                                        <a href="/store" class="text-dark mb-1 mt-2 h6 d-block">Citrus </a>
                                         <p class="text-secondary small">Oranges, Grapefruit, Mandarins</p>
                                     </div>
                                 </div>
@@ -30,7 +30,7 @@
                                     <img src="img/banana-small.png" alt="" class="small-slide-right">
                                     <div class="col-8">
                                         <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite</i></button>
-                                        <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">Tropical </a>
+                                        <a href="/store" class="text-dark mb-1 mt-2 h6 d-block">Tropical </a>
                                         <p class="text-secondary small">Bananas, Mangoes</p>
                                     </div>
                                 </div>
@@ -44,7 +44,7 @@
                                     <img src="img/grapes.png" alt="" class="small-slide-right">
                                     <div class="col-9">
                                         <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
-                                        <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">Berries</a>
+                                        <a href="/store" class="text-dark mb-1 mt-2 h6 d-block">Berries</a>
                                         <p class="text-secondary small">Strawberries, Raspberries, Blueberries</p>
                                     </div>
                                 </div>
@@ -58,7 +58,7 @@
                                     <img src="img/orange.png" alt="" class="small-slide-right">
                                     <div class="col-8">
                                         <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
-                                        <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">Citrus </a>
+                                        <a href="/store" class="text-dark mb-1 mt-2 h6 d-block">Citrus </a>
                                         <p class="text-secondary small">Oranges, Grapefruit, Mandarins</p>
                                     </div>
                                 </div>
@@ -72,7 +72,7 @@
                                     <img src="img/banana-small.png" alt="" class="small-slide-right">
                                     <div class="col-8">
                                         <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite</i></button>
-                                        <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">Tropical </a>
+                                        <a href="/store" class="text-dark mb-1 mt-2 h6 d-block">Tropical </a>
                                         <p class="text-secondary small">Bananas, Mangoes</p>
                                     </div>
                                 </div>
@@ -86,7 +86,7 @@
                                     <img src="img/grapes.png" alt="" class="small-slide-right">
                                     <div class="col-9">
                                         <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
-                                        <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">Berries</a>
+                                        <a href="/store" class="text-dark mb-1 mt-2 h6 d-block">Berries</a>
                                         <p class="text-secondary small">Strawberries, Raspberries, Blueberries</p>
                                     </div>
                                 </div>
@@ -100,7 +100,7 @@
                                     <img src="img/orange.png" alt="" class="small-slide-right">
                                     <div class="col-8">
                                         <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
-                                        <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">Citrus </a>
+                                        <a href="/store" class="text-dark mb-1 mt-2 h6 d-block">Citrus </a>
                                         <p class="text-secondary small">Oranges, Grapefruit, Mandarins</p>
                                     </div>
                                 </div>
@@ -114,7 +114,7 @@
                                     <img src="img/banana-small.png" alt="" class="small-slide-right">
                                     <div class="col-8">
                                         <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite</i></button>
-                                        <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">Tropical </a>
+                                        <a href="/store" class="text-dark mb-1 mt-2 h6 d-block">Tropical </a>
                                         <p class="text-secondary small">Bananas, Mangoes</p>
                                     </div>
                                 </div>
@@ -128,7 +128,7 @@
                                     <img src="img/grapes.png" alt="" class="small-slide-right">
                                     <div class="col-9">
                                         <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
-                                        <a href="all-products.html" class="text-dark mb-1 mt-2 h6 d-block">Berries</a>
+                                        <a href="/store" class="text-dark mb-1 mt-2 h6 d-block">Berries</a>
                                         <p class="text-secondary small">Strawberries, Raspberries, Blueberries</p>
                                     </div>
                                 </div>
@@ -139,7 +139,7 @@
             </div>
         </div>
 
-        <h6 class="subtitle">Products <a href="all-products.html" class="float-right small">View All</a></h6>
+        <h6 class="subtitle">Products <a href="/store" class="float-right small">View All</a></h6>
         <div class="row">
             <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card shadow-sm border-0 mb-4">
@@ -147,7 +147,7 @@
                         <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
                         <div class="badge badge-success float-right mt-1">10% off</div>
                         <figure class="product-image"><img src="img/apple.png" alt="" class=""></figure>
-                        <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">Red Apple </a>
+                        <a href="/detil" class="text-dark mb-1 mt-2 h6 d-block">Red Apple </a>
                         <p class="text-secondary small mb-2">Imported from Simla</p>
                         <h5 class="text-success font-weight-normal mb-0">$ 120<sup>.00</sup></h5>
                         <p class="text-secondary small text-mute mb-0">1.0 kg</p>
@@ -161,7 +161,7 @@
                         <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
                         <div class="badge badge-success float-right mt-1">10% off</div>
                         <figure class="product-image"><img src="img/grapes2.png" alt="" class=""></figure>
-                        <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">Green Grapes</a>
+                        <a href="/detil" class="text-dark mb-1 mt-2 h6 d-block">Green Grapes</a>
                         <p class="text-secondary small mb-2">Chilled fresh</p>
                         <h5 class="text-success font-weight-normal mb-0">$ 100<sup>.00</sup></h5>
                         <p class="text-secondary small text-mute mb-0">1.0 kg</p>
@@ -175,7 +175,7 @@
                         <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
                         <div class="badge badge-primary float-right mt-1">10% off</div>
                         <figure class="product-image"><img src="img/orange-2.png" alt="" class=""></figure>
-                        <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">Orange</a>
+                        <a href="/detil" class="text-dark mb-1 mt-2 h6 d-block">Orange</a>
                         <p class="text-secondary small mb-2">Sweet and Juicy</p>
                         <h5 class="text-success font-weight-normal mb-0">$ 120<sup>.00</sup></h5>
                         <p class="text-secondary small text-mute mb-0">1.0 kg</p>
@@ -189,7 +189,7 @@
                         <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
                         <div class="badge badge-info float-right mt-1">50% off</div>
                         <figure class="product-image"><img src="img/orange-small.png" alt="" class=""></figure>
-                        <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">Lemon</a>
+                        <a href="/detil" class="text-dark mb-1 mt-2 h6 d-block">Lemon</a>
                         <p class="text-secondary small mb-2">Most Demanded</p>
                         <h5 class="text-success font-weight-normal mb-0">$ 120<sup>.00</sup></h5>
                         <p class="text-secondary small text-mute mb-0">1.0 kg</p>
@@ -203,7 +203,7 @@
                         <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
                         <div class="badge badge-success float-right mt-1">10% off</div>
                         <figure class="product-image"><img src="img/apple.png" alt="" class=""></figure>
-                        <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">Red Apple </a>
+                        <a href="/detil" class="text-dark mb-1 mt-2 h6 d-block">Red Apple </a>
                         <p class="text-secondary small mb-2">Imported from Simla</p>
                         <h5 class="text-success font-weight-normal mb-0">$ 120<sup>.00</sup></h5>
                         <p class="text-secondary small text-mute mb-0">1.0 kg</p>
@@ -217,7 +217,7 @@
                         <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
                         <div class="badge badge-success float-right mt-1">10% off</div>
                         <figure class="product-image"><img src="img/grapes2.png" alt="" class=""></figure>
-                        <a href="product-details.html" class="text-dark mb-1 mt-2 h6 d-block">Green Grapes</a>
+                        <a href="/detil" class="text-dark mb-1 mt-2 h6 d-block">Green Grapes</a>
                         <p class="text-secondary small mb-2">Chilled fresh</p>
                         <h5 class="text-success font-weight-normal mb-0">$ 100<sup>.00</sup></h5>
                         <p class="text-secondary small text-mute mb-0">1.0 kg</p>
