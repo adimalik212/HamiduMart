@@ -14,5 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return view('page/splash');
+});
+route::group([], function () {
+  Route::get('intro',function(){return view('page/intro');});
+  Route::get('login',function(){return view('page/login');});
+  Route::get('register',function(){return view('page/register');});
+  Route::get('dashboard',function(){return view('page/index');});
 });
