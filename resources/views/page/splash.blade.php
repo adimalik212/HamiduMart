@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layout.app2')
 @section('konten')
     
     <div class="row no-gutters vh-100">
