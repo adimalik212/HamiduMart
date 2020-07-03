@@ -19,12 +19,20 @@ Route::get('/', function () {
 });
 route::group([], function () {
   Route::get('intro',function(){return view('page/intro');});
-  Route::get('login',function(){return view('page/login');});
-  Route::get('register',function(){return view('page/register');});
+  Route::get('kategori', 'kategoris@index');
+  Route::post('kategoriAdd', 'kategoris@store');
+  Route::patch('kategoriUpdate/{kategori}', 'kategoris@update');
+  Route::delete('kategoriDelete/{kategori}', 'kategoris@destroy');
+  Route::get('login', 'users@login');
+  Route::get('logout', 'users@logout');
+  Route::post('loginPost', 'users@loginPost');
+  Route::get('register', 'users@register');
+  Route::post('registerPost', 'users@registerPost');
   Route::get('dashboard',function(){return view('page/index');});
   Route::get('profile',function(){return view('page/user/profile');});
-  Route::get('editProfile',function(){return view('page/user/store');});
+  Route::get('editProfile',function(){return view('page/user/editProfile');});
   Route::get('store',function(){return view('page/store/store');});
+  Route::get('addStore',function(){return view('page/store/add');});
   Route::get('myCart',function(){return view('page/store/myCart');});
   Route::get('bayar',function(){return view('page/store/bayar');});
   Route::get('tankyou',function(){return view('page/store/tankyou');});

@@ -28,7 +28,12 @@
     
 </head>
 <body>
-    @include('layout.sidebar')
+    @if (session('role') == 'Admin')
+        @include('layout.sidebar2')
+    @else
+        @include('layout.sidebar')
+    @endif
+    
     <div class="wrapper">
         <div class="header">
             <div class="row no-gutters">

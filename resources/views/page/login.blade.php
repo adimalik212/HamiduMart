@@ -3,7 +3,7 @@
 <div class="row no-gutters vh-100 loader-screen bg-success">
     <div class="col align-self-center text-white text-center">
         <img src="/img/logo.png" alt="logo">
-        <h1><span class="font-weight-light">Go</span>Fruit</h1>
+        <h1><span class="font-weight-light">Hamidu</span>Mart</h1>
         <div class="laoderhorizontal"><div></div><div></div><div></div><div></div></div>
     </div>
 </div>
@@ -12,14 +12,14 @@
     <div class="col align-self-center px-3 text-center">
         <img src="img/logo.png" alt="logo" class="logo-small">
         <h2 class="text-white "><span class="font-weight-light">Sign</span>In</h2>
-        <form class="form-signin shadow">
+        <form class="form-signin shadow" method="POST" action="/loginPost"> @csrf
             <div class="form-group float-label">
-                <input type="email" id="inputEmail" class="form-control" required autofocus>
+                <input type="email" id="inputEmail" class="form-control" name="email" value="user@gmail.com" required autofocus>
                 <label for="inputEmail" class="form-control-label">Email address</label>
             </div>
 
             <div class="form-group float-label">
-                <input type="password" id="inputPassword" class="form-control" required>
+                <input type="password" id="inputPassword" class="form-control" name="password" value="user" required>
                 <label for="inputPassword" class="form-control-label">Password</label>
             </div>
 
@@ -32,10 +32,10 @@
 
             <div class="row">
                 <div class="col-auto">
-                    <a href="/dashboard" class="btn btn-lg btn-success btn-rounded shadow"><span>Sign in</span><i class="material-icons">arrow_forward</i></a>
+                    <button type="submit" class="btn btn-lg btn-success btn-rounded shadow"><span>Sign in</span><i class="material-icons">arrow_forward</i></button>
                 </div>
                 <div class="col align-self-center text-right pl-0">
-                    <a href="forgot-password.html">Forgot Password?</a>
+                    <a href="#">Forgot Password?</a>
                 </div>
             </div>
         </form>

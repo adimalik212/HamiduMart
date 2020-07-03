@@ -25,12 +25,10 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
-                            <p>Nama Lapak</p>
-                            <h3 class="badge badge-primary shadow">asdf</h3>
+                            <h3 class="badge badge-primary  shadow">Lapak Khusus Admin</h3>
                         </div>
                         <div class="col-auto">
                             <a href="/addStore" class="btn btn-default button-rounded-36 shadow"><i class="material-icons">add</i></a>
-                            <a href="/addStore" class="btn btn-primary button-rounded-36 shadow"><i class="material-icons">edit</i></a>
                         </div>
                     </div>
                 </div>
@@ -39,7 +37,7 @@
             <div class="list-group main-menu">
                 <a href="/dashboard" class="list-group-item list-group-item-action active">Dashboard</a>
                 <a href="/store" class="list-group-item list-group-item-action">Store</a>
-                <a href="/myCart" class="list-group-item list-group-item-action">My Cart</a>
+                <a href="/kategori" class="list-group-item list-group-item-action">Kategori</a>
                 <a href="/profile" class="list-group-item list-group-item-action">My Profile</a>
                 <a href="/myProduct" class="list-group-item list-group-item-action">My Product</a>
                 {{-- <a href="setting.html" class="list-group-item list-group-item-action">Settings</a> --}}

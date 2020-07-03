@@ -8,8 +8,8 @@
                     </a>
                 </div>
                 <div class="col-auto">
-                    <a href="/store" class="btn btn-link-default">
-                        <i class="material-icons">shopping_cart</i>
+                    <a href="/myProduct" class="btn btn-link-default">
+                        <i class="material-icons">work</i>
                     </a>
                 </div>
                 <div class="col-auto">
@@ -18,8 +18,8 @@
                     </a>
                 </div>
                 <div class="col-auto">
-                    <a href="/myProduct" class="btn btn-link-default">
-                        <i class="material-icons">work</i>
+                    <a href="/store" class="btn btn-link-default">
+                        <i class="material-icons">shopping_cart</i>
                     </a>
                 </div>
                 <div class="col-auto">

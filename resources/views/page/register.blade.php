@@ -12,32 +12,32 @@
     <div class="col align-self-center px-3  text-center">
         <img src="img/logo.png" alt="logo" class="logo-small">
         <h2 class="text-white"><span class="font-weight-light">Sign</span>In</h2>
-        <form class="form-signin shadow">
-             <div class="form-group float-label active">
-                <input type="text" class="form-control" required value="Ammy Johnson" >
-                <label class="form-control-label">Name</label>
+        <form class="form-signin shadow" method="POST" action="/registerPost"> @csrf
+             <div class="form-group float-label">
+                <input type="text" class="form-control" name="name" required autofocus>
+                <label class="form-control-label">Nama</label>
             </div>
             
-            <div class="form-group float-label active">
-                <input type="email" id="inputEmail" class="form-control" value="ammyjohnson@maxartkiller.co" required autofocus>
-                <label for="inputEmail" class="form-control-label">Email address</label>
+            <div class="form-group float-label">
+                <input type="email" id="inputEmail" name="email" class="form-control" required>
+                <label for="inputEmail" class="form-control-label">Alamat email</label>
             </div>
 
             <div class="form-group float-label">
-                <input type="password" id="inputPassword" class="form-control" required>
+                <input type="password" id="inputPassword" name="password" class="form-control" required>
                 <label for="inputPassword" class="form-control-label">Password</label>
             </div>
-
-            <div class="form-group my-4 text-left">
+            <br><br>
+            {{-- <div class="form-group my-4 text-left">
                 <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="rememberme">
                     <label class="custom-control-label" for="rememberme">I accept <a href="#">Terms and Condition</a></label>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="row">
                 <div class="col-auto">
-                    <a href="/login" class="btn btn-lg btn-default btn-rounded shadow bg-success"><span>Sign Up</span><i class="material-icons">arrow_forward</i></a>
+                    <button type="submit" class="btn btn-lg btn-default btn-rounded shadow bg-success"><span>Sign Up</span><i class="material-icons">arrow_forward</i></button>
                 </div>
             </div>
         </form>

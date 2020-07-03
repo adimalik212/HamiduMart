@@ -11,18 +11,18 @@
         </div>
     </div>
 
-    <h6 class="subtitle">Basic Information</h6>
+    <h6 class="subtitle">Informasi Diri</h6>
     <div class="row">
         <div class="col-12 col-md-6">
             <div class="form-group float-label active">
                 <input type="text" class="form-control" required="" value="Ammy Johnson">
-                <label class="form-control-label">Name</label>
+                <label class="form-control-label">Nama</label>
             </div>
         </div>
         <div class="col-12 col-md-6">
             <div class="form-group float-label active">
                 <input type="email" class="form-control" required="" value="ammyjohnson@maxartkiller.com">
-                <label class="form-control-label">Email address</label>
+                <label class="form-control-label">Alamat Email</label>
             </div>
         </div>
     </div>

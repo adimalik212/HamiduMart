@@ -8,8 +8,8 @@
                 <p class="small text-mute">2154 products</p>
             </div>
             <div class="float-right">
-                <div class="btn-group filter-group" role="group" aria-label="Basic example">
-                    <a href="/add" class="btn btn-light "><i class="material-icons">add_box</i></a>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <a href="/addStore" class="btn btn-light "><i class="material-icons">add_box</i></a>
                 </div>
             </div>
         </div>
@@ -22,7 +22,8 @@
                                 <figure class="product-image"><img src="img/apple.png" alt="" class=""></figure>
                             </div>
                             <div class="col">
-                                <button class="btn btn-sm btn-link p-0 float-right"><i class="material-icons md-18">favorite_outline</i></button>
+                                <a href="" class="btn btn-sm btn-secondari p-0 float-right"><i class="material-icons md-18">delete</i></a>
+                                <a href="" class="btn btn-sm btn-secondari p-0 float-right"><i class="material-icons md-18">edit</i></a>
                                 <a href="/detil" class="text-dark mb-1 h6 d-block">Red Apple </a>
                                 <p class="text-secondary small mb-2">Imported from Simla</p>
                                 <h5 class="text-success font-weight-normal mb-0">$ 120<sup>.00</sup>
