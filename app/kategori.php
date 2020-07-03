@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class kategori extends Model
 {
     protected $fillable = [
-        'kategori'
+        'kategori','id'
     ];
+    public $incrementing = false;
 }

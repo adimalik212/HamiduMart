@@ -6,6 +6,7 @@ use App\user;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use Ramsey\Uuid\Uuid;
 
 class users extends Controller
 {
@@ -133,6 +134,7 @@ class users extends Controller
         ]);
 
         $data =  new user();
+        $data->id = $uuid = Uuid::uuid4();
         $data->name = $request->name;
         $data->email = $request->email;
         $data->role = 'Reguler';

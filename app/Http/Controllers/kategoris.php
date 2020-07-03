@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\kategori;
 use Illuminate\Http\Request;
+use Ramsey\Uuid\Uuid;
 
 class kategoris extends Controller
 {
@@ -41,6 +42,7 @@ class kategoris extends Controller
         ]);
         $data = array(
             'kategori' => $request->kategori,
+            'id' => $uuid = Uuid::uuid4(),
         );
 
         kategori::create($data);
