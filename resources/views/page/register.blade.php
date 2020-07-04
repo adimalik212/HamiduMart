@@ -15,7 +15,7 @@
         <form class="form-signin shadow" method="POST" action="/registerPost"> @csrf
              <div class="form-group float-label">
                 <input type="text" class="form-control" name="name" required autofocus>
-                <label class="form-control-label">Nama</label>
+                <label class="form-control-label">Nama Lapak</label>
             </div>
             
             <div class="form-group float-label">

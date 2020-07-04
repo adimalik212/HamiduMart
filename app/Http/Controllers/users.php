@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\user;
+use App\lapak;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
@@ -98,6 +99,7 @@ class users extends Controller
         $data = User::where('email',$email)->first();
         if($data){ //apakah email tersebut ada atau tidak
             if(Hash::check($password, $data->password)){
+                Session::put('id',$data->id);
                 Session::put('name',$data->name);
                 Session::put('email',$data->email);
                 Session::put('role',$data->role);
@@ -132,17 +134,24 @@ class users extends Controller
             'email' => 'required|min:4|email|unique:users',
             'password' => 'required',
         ]);
-
-        $data =  new user();
-        $data->id = $uuid = Uuid::uuid4();
-        $data->name = $request->name;
-        $data->email = $request->email;
-        $data->role = 'Reguler';
-        $data->status = '1';
-        $data->password = bcrypt($request->password);
-        $data->save();
+        $id = Uuid::uuid4();
+        $data = array(
+            'id' => $id,
+            'name' => $request->name,
+            'email' => $request->email,
+            'role' => 'Reguler',
+            'status' => '1',
+            'password' => bcrypt($request->password),
+        );
+        $lapak = array(
+            'id' => Uuid::uuid4(),
+            'user_id' => $id,
+            'pemilik' => $request->name,
+        );
 
         // $notif = Toastr::success('Kamu berhasil Register :)','Selamat');
+        user::create($data);
+        lapak::create($lapak);
         return redirect('/login');
     }
 

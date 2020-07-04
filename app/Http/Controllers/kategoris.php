@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\kategori;
+use App\lapak;
 use Illuminate\Http\Request;
 use Ramsey\Uuid\Uuid;
 
@@ -16,7 +17,8 @@ class kategoris extends Controller
     public function index()
     {
         $kateg = kategori::all();
-        return view('page.store.kategori', compact('kateg'));
+        $lapak = lapak::where('user_id', session('id'))->first();
+        return view('page.store.kategori', compact('kateg','lapak'));
     }
 
     /**

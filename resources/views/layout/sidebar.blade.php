@@ -16,7 +16,6 @@
             <figure><img src="img/user1.png" alt=""></figure>
         </div>
         <h5 class="mb-1 ">{{session('name')}}</h5>
-        {{-- <p class="text-mute small">Sydney, Australia</p> --}}
     </div>
     <br>
     <div class="row mx-0">
@@ -25,8 +24,8 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
-                            <p>Nama Lapak</p>
-                            <h3 class="badge badge-primary shadow">asdf</h3>
+                            <p class="text-secondary small mb-0">Nama Lapak</p>
+                            <h6 class="text-dark my-0">{{session('name')}}</h6>
                         </div>
                         <div class="col-auto">
                             <a href="/addStore" class="btn btn-default button-rounded-36 shadow"><i class="material-icons">add</i></a>
