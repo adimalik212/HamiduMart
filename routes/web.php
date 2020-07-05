@@ -32,12 +32,22 @@ route::group([], function () {
   Route::post('registerPost', 'users@registerPost');
   Route::get('dashboard',function(){
     $lapak = App\lapak::where('user_id', session('id'))->first();
-    return view('page/index', compact('lapak'));
+    $kateg = App\kategori::all();
+    $store = App\store::all();
+    $user = App\user::all();
+    return view('page/index', compact('lapak','kateg','store','user'));
   });
   Route::get('store','stores@index');
   Route::get('myProduct','stores@product');
   Route::get('addStore','stores@addStore');
   Route::post('addStorePost','stores@store');
+  Route::get('detilStore/{store}','stores@show');
+  Route::get('editStore/{store}','stores@editStore');
+  Route::patch('editStorePost/{store}','stores@update');
+  Route::delete('deleteStore/{store}','stores@destroy');
+  
+  Route::post('addKomen','komentars@store');
+  Route::patch('updateKomen/{komentar}','komentars@update');
 
   Route::get('profile',function(){return view('page/user/profile');});
   Route::get('editProfile',function(){return view('page/user/editProfile');});

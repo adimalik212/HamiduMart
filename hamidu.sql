@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 04, 2020 at 05:38 AM
+-- Generation Time: Jul 04, 2020 at 06:50 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.2.23
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `hamidumart`
+-- Database: `hamidu`
 --
 
 -- --------------------------------------------------------
@@ -44,7 +44,7 @@ CREATE TABLE `failed_jobs` (
 --
 
 CREATE TABLE `kategoris` (
-  `id` varchar(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
   `kategori` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -66,8 +66,26 @@ INSERT INTO `kategoris` (`id`, `kategori`, `created_at`, `updated_at`) VALUES
 --
 -- Table structure for table `lapaks`
 --
--- Error reading structure for table hamidumart.lapaks: #1932 - Table 'hamidumart.lapaks' doesn't exist in engine
--- Error reading data for table hamidumart.lapaks: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `hamidumart`.`lapaks`' at line 1
+
+CREATE TABLE `lapaks` (
+  `id` char(36) NOT NULL,
+  `user_id` char(36) NOT NULL,
+  `namaLapak` varchar(255) DEFAULT NULL,
+  `pemilik` varchar(255) NOT NULL,
+  `url` varchar(255) DEFAULT NULL,
+  `kab` varchar(255) DEFAULT NULL,
+  `kec` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `lapaks`
+--
+
+INSERT INTO `lapaks` (`id`, `user_id`, `namaLapak`, `pemilik`, `url`, `kab`, `kec`, `created_at`, `updated_at`) VALUES
+('e483afac-264f-46e6-bd21-75edadaef3f5', '2ab8c090-cb8f-4335-a916-ed51a23f281b', NULL, 'user', NULL, NULL, NULL, '2020-07-03 21:37:34', '2020-07-03 21:37:34'),
+('f5363af9-a9f4-4ed3-808b-d4f4ef2cd8ae', 'f1904c4b-e385-4f86-83a4-4491f69ee3b3', 'adminMart', 'admin', 'adminmart', 'Ciamis', 'Jatinagara', '2020-07-03 21:37:17', '2020-07-03 21:38:49');
 
 -- --------------------------------------------------------
 
@@ -89,8 +107,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2020_07_02_130535_kategori', 2),
-(5, '2020_07_03_121302_store', 3),
-(6, '2020_07_03_130729_lapak', 4);
+(5, '2020_07_03_121302_store', 3);
 
 -- --------------------------------------------------------
 
@@ -119,7 +136,7 @@ CREATE TABLE `stores` (
 --
 
 INSERT INTO `stores` (`id`, `lapak_id`, `namaBarang`, `kategori`, `harga`, `bobot`, `volume`, `kondisi`, `deskripsi`, `photo`, `url`, `created_at`, `updated_at`) VALUES
-('0bda6a8f-4e24-4b3c-9dfb-3304a07cb123', '88269002-d527-4851-ad37-c5013a309085', 'adf adf 2323', 'Minuman', '123555999000', 23, 'Gram', 'Baru', 'adsf asf asdf asdf', NULL, '', '2020-07-03 07:55:46', '2020-07-03 07:55:46');
+('c91327d2-024c-4eb5-85ce-a667c1bff58c', 'f5363af9-a9f4-4ed3-808b-d4f4ef2cd8ae', 'sampeu', 'Makanan', '20000', 2, 'Gram', 'Baru', 'sampeu atah', NULL, '', '2020-07-03 21:39:42', '2020-07-03 21:39:42');
 
 -- --------------------------------------------------------
 
@@ -146,9 +163,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `role`, `status`, `photo`, `remember_token`, `created_at`, `updated_at`) VALUES
-('1b511589-1ed5-4d89-962f-0b684443a5d2', 'admin', 'admin@gmail.com', NULL, '$2y$10$fTmS5hWO4zsNvFaG5/h1Ge/6HWzs3WZvBGdO.fUAkn6u72CfUrA7K', 'Admin', 1, NULL, NULL, '2020-07-03 00:57:22', '2020-07-03 00:57:22'),
-('3bd6df86-88ba-4019-badf-285833bd23cc', 'test', 'test@gmail.com', NULL, '$2y$10$Qnb9nDLq.B/DSUCq9/WRmOcXprjxVR.tl.aUkD49yB.Jn5qM88P.a', 'Admin', 1, NULL, NULL, '2020-07-03 06:29:31', '2020-07-03 06:29:31'),
-('b8147ca1-78b9-4f7f-bb05-a359f7956d45', 'user', 'user@gmail.com', NULL, '$2y$10$1nm976gVP2STdjgcfyvnfeGxfKB0l8OjCs5LFfvSyFKTCkD37JNC.', 'Reguler', 1, NULL, NULL, '2020-07-03 00:57:36', '2020-07-03 00:57:36');
+('2ab8c090-cb8f-4335-a916-ed51a23f281b', 'user', 'user@gmail.com', NULL, '$2y$10$.Klb/wy.qBc9h.Iba.holOEH0H2CeOl0HEgClabYhjiQVNALWEMt2', 'Reguler', 1, NULL, NULL, '2020-07-03 21:37:34', '2020-07-03 21:37:34'),
+('f1904c4b-e385-4f86-83a4-4491f69ee3b3', 'admin', 'admin@gmail.com', NULL, '$2y$10$H014KX5gvTx16tLpwutnFuCLaXS2FASOcaNzLtX4EZXlcV2E3Sg/G', 'Admin', 1, NULL, NULL, '2020-07-03 21:37:17', '2020-07-03 21:37:17');
 
 --
 -- Indexes for dumped tables
@@ -166,6 +182,12 @@ ALTER TABLE `failed_jobs`
 ALTER TABLE `kategoris`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id` (`id`);
+
+--
+-- Indexes for table `lapaks`
+--
+ALTER TABLE `lapaks`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `migrations`

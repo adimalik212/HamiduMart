@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\store;
 use App\lapak;
 use App\kategori;
+use App\komentar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Ramsey\Uuid\Uuid;
@@ -19,7 +20,8 @@ class stores extends Controller
     public function index()
     {
         $lapak = lapak::where('user_id', session('id'))->first();
-        return view('page.store.store', compact('lapak'));
+        $store = store::all();
+        return view('page.store.store', compact('lapak','store'));
     }
 
     public function product()
@@ -35,6 +37,14 @@ class stores extends Controller
         $lapak = lapak::where('user_id', session('id'))->first();
         $kategori = kategori::all();
         return view('page.store.add', compact('lapak','kategori'));
+    }
+
+    public function editStore(store $store)
+    {
+        $lapak = lapak::where('user_id', session('id'))->first();
+        $kategori = kategori::all();
+        $store = store::where('id', $store->id)->first();
+        return view('page.store.edit', compact('lapak','kategori','store'));
     }
 
     /**
@@ -69,15 +79,15 @@ class stores extends Controller
         $data = array(
             'id' => Uuid::uuid4(),
             'lapak_id' => $request->lapak_id,
-            'namaBarang' => $request->namaBarang,
-            'kategori' => $request->kategori,
+            'namaBarang' => ucwords($request->namaBarang),
+            'kategori' => ucwords($request->kategori),
             'harga' => $request->harga,
             'bobot' => $request->bobot,
             'volume' => $request->volume,
             'kondisi' => $request->kondisi,
             'deskripsi' => $request->deskripsi,
             // 'photo' => $request->photo,
-            'url' => str::slug($request->namBarang),
+            'url' => str::slug($request->namBarang)
         );
 
         store::create($data);
@@ -92,7 +102,10 @@ class stores extends Controller
      */
     public function show(store $store)
     {
-        //
+        $lapak = lapak::where('user_id', session('id'))->first();
+        $store = store::where('id', $store->id)->first();
+        $komen = komentar::where('barang_id', $store->id)->get();
+        return view('page.store.detil', compact('lapak','store','komen'));
     }
 
     /**
@@ -115,7 +128,33 @@ class stores extends Controller
      */
     public function update(Request $request, store $store)
     {
-        //
+        $this->validate($request, [
+            'namaBarang' => 'required|string',
+            'kategori' => 'required|string',
+            'kondisi' => 'required|string',
+            'harga' => 'required|integer',
+            'bobot' => 'required|integer',
+            'volume' => 'required|string',
+            'deskripsi' => 'required|string',
+            // 'photo' => 'required|string',
+        ]);
+
+        $data = array(
+            'id' => Uuid::uuid4(),
+            'lapak_id' => $request->lapak_id,
+            'namaBarang' => ucwords($request->namaBarang),
+            'kategori' => ucwords($request->kategori),
+            'harga' => $request->harga,
+            'bobot' => $request->bobot,
+            'volume' => $request->volume,
+            'kondisi' => $request->kondisi,
+            'deskripsi' => $request->deskripsi,
+            // 'photo' => $request->photo,
+            'url' => str::slug($request->namBarang),
+        );
+
+        store::where('id', $store->id)->update($data);
+        return redirect('myProduct');
     }
 
     public function lapakUpdate(Request $request, lapak $lapak)
@@ -127,8 +166,8 @@ class stores extends Controller
         ]);
         $data = array(
             'namaLapak' => $request->namaLapak,
-            'kab' => $request->kab,
-            'kec' => $request->kec,
+            'kab' => ucwords($request->kab),
+            'kec' => ucwords($request->kec),
             'url' => Str::slug($request->namaLapak),
         );
         lapak::where('id', $lapak->id)->update($data);
@@ -143,6 +182,7 @@ class stores extends Controller
      */
     public function destroy(store $store)
     {
-        //
+        store::where('id', $store->id)->delete();
+        return redirect()->back();
     }
 }

@@ -1,6 +1,6 @@
 <div class="row no-gutters vh-100 loader-screen">
     <div class="col align-self-center text-white text-center">
-        <img src="img/logo.png" alt="logo">
+        <img src="/img/logo.png" alt="logo">
         <h1><span class="font-weight-light">Hamidu</span>Mart</h1>
         <div class="laoderhorizontal">
             <div></div>
@@ -13,7 +13,7 @@
 <div class="sidebar">
     <div class="text-center">
         <div class="figure-menu shadow">
-            <figure><img src="img/user1.png" alt=""></figure>
+            <figure><img src="/img/user1.png" alt=""></figure>
         </div>
         <h5 class="mb-1 ">{{session('name')}}</h5>
         {{-- <p class="text-mute small">{{session('name')}}_olshop</p> --}}
