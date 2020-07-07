@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Transaksis extends Migration
+class Order extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class Transaksis extends Migration
      */
     public function up()
     {
-        Schema::create('transaksis', function (Blueprint $table) {
-            $table->uuid('id', 36)->primary();
-            // $table->uuid('barang_id', 36);
-            // $table->string('nama');
-            // $table->string('email');
-            // $table->string('komentar');
-            // $table->string('balas');
-            // $table->string('pemilikBarang');
+        Schema::create('orders', function (Blueprint $table) {
+            $table->uuid('barang_id', 36);
+            $table->integer('jumlah');
+            $table->double('totalBayar');
+            $table->string('pembeli');
+            $table->string('alamat');
             $table->timestamps();
         });
     }

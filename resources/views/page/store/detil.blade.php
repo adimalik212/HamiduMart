@@ -38,14 +38,14 @@
             <p class="text-secondary">{{$store->deskripsi}}</p>
             <div class="row mb-4">
                 <div class="col">
-                    <h3 class="text-success font-weight-normal mb-0">$ {{$store->harga}}</h3>
+                    <h3 class="text-success font-weight-normal mb-0">Rp. {{$store->harga}}</h3>
                     <p class="text-secondary text-mute mb-0">{{$store->bobot}}.0 {{$store->volume}}</p>
                 </div>
                 <div class="col-auto align-self-center">
-                    <button class="btn btn-lg btn-default shadow btn-rounded">Beli <i class="material-icons md-18">shopping_cart</i></button>
+                    <button class="btn btn-lg btn-default shadow btn-rounded">Order <i class="material-icons md-18">shopping_cart</i></button>
                 </div>
             </div>
-            <h6 class="text-muted">dikirim dari : {{$lapak->kec}}, {{$lapak->kab}}</h6>
+            <h6 class="text-muted mb-3">dikirim dari : {{$lapak->kec}}, {{$lapak->kab}}</h6>
 
             @foreach ($komen as $k)
                 <div class="row bg-white py-3">
@@ -80,7 +80,7 @@
                 </div>
                 @if ($k->balas == null)
                 @else
-                <div class="row bg-white pb-3 ml-3 my-1">
+                <div class="row bg-white py-3 ml-3 my-1">
                     <div class="col-6 mb-3">
                         <p>
                             <i class="material-icons text-warning md-18 vm">star</i>

@@ -31,7 +31,10 @@
                             <h5 class="text-success font-weight-normal mb-2">$ {{$s->harga}}</h5>
                             <p class="text-secondary small text-mute mb-0">{{$s->bobot}}.0 {{$s->volume}}</p>
                             <p class="text-secondary small text-mute mb-0">{{$lapak->kec}}</p>
+                            <form action="/order/{{$s->id}}" method="post"> @csrf
+                            <input type="hidden" name="id" value="{{$s->id}}">
                             <button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">shopping_cart</i></button>
+                            </form>
                         </div>
                     </div>
                 </div>

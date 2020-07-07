@@ -48,10 +48,12 @@ route::group([], function () {
   
   Route::post('addKomen','komentars@store');
   Route::patch('updateKomen/{komentar}','komentars@update');
+  
+  Route::get('myCart', 'orders@index');
+  Route::post('order/{order}', 'orders@store');
 
   Route::get('profile',function(){return view('page/user/profile');});
   Route::get('editProfile',function(){return view('page/user/editProfile');});
-  Route::get('myCart',function(){return view('page/store/myCart');});
   Route::get('bayar',function(){return view('page/store/bayar');});
   Route::get('tankyou',function(){return view('page/store/tankyou');});
   Route::get('detil',function(){return view('page/store/detil');});
