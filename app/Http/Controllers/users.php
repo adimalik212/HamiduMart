@@ -50,7 +50,8 @@ class users extends Controller
      */
     public function show(user $user)
     {
-        //
+        $lapak = lapak::where('user_id', session('id'))->first();
+        return view('page.user.profile', compact('lapak'));
     }
 
     /**

@@ -6,9 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class pilih extends Model
 {
-    protected $table = 'pilihs';
     protected $fillable = [
-        'id','barang_id','harga','jumlah','total','pembeli','alamat'
+        'id','barang_id','harga','jumlah','total','pembeli'
     ];
     public $incrementing = false;
 }

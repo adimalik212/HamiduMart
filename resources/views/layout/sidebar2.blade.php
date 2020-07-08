@@ -26,7 +26,13 @@
                     <div class="row">
                         <div class="col">
                             <p class="text-secondary small mb-0">Nama Lapak</p>
+                            @if ($lapak->namaLapak == null)
+                                
+                            <h6 class="text-dark my-0"></h6>
+                            @else
+                                
                             <h6 class="text-dark my-0">{{$lapak->namaLapak}}</h6>
+                            @endif
                         </div>
                         <div class="col-auto">
                             <a href="#lapak" data-toggle="modal" class="btn btn-default button-rounded-36 shadow"><i class="material-icons">update</i></a>

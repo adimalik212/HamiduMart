@@ -13,14 +13,16 @@ class Lapak extends Migration
      */
     public function up()
     {
-        // Schema::create('lapaks', function (Blueprint $table) {
-        //     $table->uuid('id', 36)->primary();
-        //     $table->uuid('user_id', 36);
-        //     $table->string('namaLapak');
-        //     $table->string('pemilik');
-        //     $table->string('url');
-        //     $table->timestamps();
-        // });
+        Schema::create('lapaks', function (Blueprint $table) {
+            $table->uuid('id', 36)->primary();
+            $table->uuid('user_id', 36);
+            $table->string('namaLapak');
+            $table->string('pemilik');
+            $table->string('url');
+            $table->string('kab');
+            $table->string('kec');
+            $table->timestamps();
+        });
     }
 
     /**

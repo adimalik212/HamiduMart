@@ -18,8 +18,9 @@ class Store extends Migration
             $table->uuid('lapak_id', 36);
             $table->string('namaBarang');
             $table->string('kategori');
-            $table->integer('harga');
+            $table->double('harga');
             $table->integer('bobot');
+            $table->string('volume');
             $table->string('kondisi');
             $table->string('deskripsi');
             $table->string('photo');

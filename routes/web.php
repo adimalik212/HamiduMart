@@ -30,6 +30,8 @@ route::group([], function () {
   Route::post('loginPost', 'users@loginPost');
   Route::get('register', 'users@register');
   Route::post('registerPost', 'users@registerPost');
+  Route::get('profile', 'users@show');
+
   Route::get('dashboard',function(){
     $lapak = App\lapak::where('user_id', session('id'))->first();
     $kateg = App\kategori::all();
@@ -55,7 +57,6 @@ route::group([], function () {
   Route::patch('pilih/{pilih}', 'pilihs@update');
   Route::delete('pilih/{pilih}', 'pilihs@destroy');
 
-  Route::get('profile', 'users@');
   Route::get('editProfile',function(){return view('page/user/editProfile');});
   Route::get('bayar',function(){return view('page/store/bayar');});
   Route::get('tankyou',function(){return view('page/store/tankyou');});
