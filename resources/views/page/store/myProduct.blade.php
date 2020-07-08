@@ -28,7 +28,7 @@
                                 @foreach ($lpk->where('id', $s->lapak_id) as $l)
                                     <p class="text-secondary small mb-2">{{$l->kab}} - {{$l->kec}}</p>
                                 @endforeach
-                                <h5 class="text-success font-weight-normal mb-0">$ {{$s->harga}}
+                                <h5 class="text-success font-weight-normal mb-0">@rupiah($s->harga)
                                     {{-- <span class="badge badge-primary d-inline-block ml-2"><small>10% off</small></span> --}}
                                 </h5>
                                 <p class="text-secondary small text-mute mb-0">{{$s->bobot}}.0 {{$s->volume}} | {{$s->kondisi}}</p>

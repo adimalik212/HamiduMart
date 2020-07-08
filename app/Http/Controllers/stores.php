@@ -6,6 +6,7 @@ use App\store;
 use App\lapak;
 use App\kategori;
 use App\komentar;
+use App\pilih;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Ramsey\Uuid\Uuid;
@@ -21,7 +22,8 @@ class stores extends Controller
     {
         $lapak = lapak::where('user_id', session('id'))->first();
         $store = store::all();
-        return view('page.store.store', compact('lapak','store'));
+        $pilih = pilih::all();
+        return view('page.store.store', compact('lapak','store','pilih'));
     }
 
     public function product()
@@ -105,7 +107,8 @@ class stores extends Controller
         $lapak = lapak::where('user_id', session('id'))->first();
         $store = store::where('id', $store->id)->first();
         $komen = komentar::where('barang_id', $store->id)->get();
-        return view('page.store.detil', compact('lapak','store','komen'));
+        $pilih = pilih::where('pembeli', session('id'))->get();
+        return view('page.store.detil', compact('lapak','store','komen','pilih'));
     }
 
     /**

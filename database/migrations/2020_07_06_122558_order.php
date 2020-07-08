@@ -13,10 +13,12 @@ class Order extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
-            $table->uuid('barang_id', 36);
+        Schema::create('pilihs', function (Blueprint $table) {
+            $table->uuid('barang_id', 36)->primary();
+            $table->uuid('id', 36);
+            $table->double('harga');
             $table->integer('jumlah');
-            $table->double('totalBayar');
+            $table->double('total');
             $table->string('pembeli');
             $table->string('alamat');
             $table->timestamps();

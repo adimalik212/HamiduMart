@@ -28,13 +28,21 @@
                             
                             <a href="/detilStore/{{$s->id}}" class="text-dark mb-1 mt-2 h6 d-block">{{$s->namaBarang}}</a>
                             <p class="text-secondary small mb-2">{{$s->kategori}}</p>
-                            <h5 class="text-success font-weight-normal mb-2">$ {{$s->harga}}</h5>
+                            <h5 class="text-success font-weight-normal mb-2">@rupiah($s->harga)</h5>
                             <p class="text-secondary small text-mute mb-0">{{$s->bobot}}.0 {{$s->volume}}</p>
                             <p class="text-secondary small text-mute mb-0">{{$lapak->kec}}</p>
-                            <form action="/order/{{$s->id}}" method="post"> @csrf
-                            <input type="hidden" name="id" value="{{$s->id}}">
-                            <button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">shopping_cart</i></button>
-                            </form>
+
+                            @forelse ($pilih->where('barang_id', $s->id)->where('pembeli', session('id')) as $o)
+                                <form action="/pilih/{{$o->id}}" method="post"> @csrf @method('patch')
+                                <button class="btn btn-danger button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">shopping_cart</i></button>
+                                </form>
+                            @empty                                
+                                <form action="/pilih" method="post"> @csrf
+                                <input type="hidden" name="barang_id" value="{{$s->id}}">
+                                <input type="hidden" name="harga" value="{{$s->harga}}">
+                                <button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">shopping_cart</i></button>
+                                </form>
+                            @endforelse
                         </div>
                     </div>
                 </div>

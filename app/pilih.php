@@ -4,10 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class order extends Model
+class pilih extends Model
 {
+    protected $table = 'pilihs';
     protected $fillable = [
-        'no_order','barang_id','jumlah','totalBayar','pembeli','alamat'
+        'id','barang_id','harga','jumlah','total','pembeli','alamat'
     ];
     public $incrementing = false;
 }

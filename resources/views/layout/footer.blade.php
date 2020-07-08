@@ -14,12 +14,12 @@
                 </div>
                 <div class="col-auto">
                     <a href="/myCart" class="btn btn-default shadow centerbutton">
-                        <i class="material-icons">local_mall</i>
+                        <i class="material-icons">shopping_cart</i>
                     </a>
                 </div>
                 <div class="col-auto">
                     <a href="/store" class="btn btn-link-default">
-                        <i class="material-icons">shopping_cart</i>
+                        <i class="material-icons">local_mall</i>
                     </a>
                 </div>
                 <div class="col-auto">

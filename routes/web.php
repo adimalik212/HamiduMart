@@ -35,7 +35,8 @@ route::group([], function () {
     $kateg = App\kategori::all();
     $store = App\store::all();
     $user = App\user::all();
-    return view('page/index', compact('lapak','kateg','store','user'));
+    $pilih = App\pilih::where('pembeli', session('id'))->get();
+    return view('page/index', compact('lapak','kateg','store','user','pilih'));
   });
   Route::get('store','stores@index');
   Route::get('myProduct','stores@product');
@@ -49,10 +50,12 @@ route::group([], function () {
   Route::post('addKomen','komentars@store');
   Route::patch('updateKomen/{komentar}','komentars@update');
   
-  Route::get('myCart', 'orders@index');
-  Route::post('order/{order}', 'orders@store');
+  Route::get('myCart', 'pilihs@index');
+  Route::post('pilih', 'pilihs@store');
+  Route::patch('pilih/{pilih}', 'pilihs@update');
+  Route::delete('pilih/{pilih}', 'pilihs@destroy');
 
-  Route::get('profile',function(){return view('page/user/profile');});
+  Route::get('profile', 'users@');
   Route::get('editProfile',function(){return view('page/user/editProfile');});
   Route::get('bayar',function(){return view('page/store/bayar');});
   Route::get('tankyou',function(){return view('page/store/tankyou');});

@@ -38,11 +38,22 @@
             <p class="text-secondary">{{$store->deskripsi}}</p>
             <div class="row mb-4">
                 <div class="col">
-                    <h3 class="text-success font-weight-normal mb-0">Rp. {{$store->harga}}</h3>
+                    <h3 class="text-success font-weight-normal mb-0">@rupiah($store->harga)</h3>
                     <p class="text-secondary text-mute mb-0">{{$store->bobot}}.0 {{$store->volume}}</p>
                 </div>
                 <div class="col-auto align-self-center">
-                    <button class="btn btn-lg btn-default shadow btn-rounded">Order <i class="material-icons md-18">shopping_cart</i></button>
+                @forelse ($pilih->where('barang_id', $store->id)->where('pembeli', session('id')) as $o)
+                    <form action="/pilih/{{$o->id}}" method="post"> @csrf @method('patch')
+                        <button class="btn btn-lg btn-danger shadow btn-rounded">Add <i class="material-icons md-18">shopping_cart</i></button>
+                    </form>
+                @empty                                
+                    <form action="/pilih" method="post"> @csrf
+                    <input type="hidden" name="barang_id" value="{{$store->id}}">
+                    <input type="hidden" name="harga" value="{{$store->harga}}">
+                    <button class="btn btn-lg btn-default shadow btn-rounded">Add <i class="material-icons md-18">shopping_cart</i></button>
+                    </form>
+                @endforelse
+                    {{-- <button class="btn btn-lg btn-default shadow btn-rounded">aad<i class="material-icons md-18">shopping_cart</i></button> --}}
                 </div>
             </div>
             <h6 class="text-muted mb-3">dikirim dari : {{$lapak->kec}}, {{$lapak->kab}}</h6>
@@ -128,7 +139,7 @@
                     <textarea class="form-control" required name="komentar"></textarea>
                     <label class="form-control-label">Tulis komentar anda ...</label>
                 </div>
-                <button type="submit" class="btn btn-lg btn-default btn-rounded shadow"><span>Comment</span><i class="material-icons">arrow_forward</i></button>
+                <button type="submit" class="btn btn-lg btn-default btn-rounded shadow"><span>Komentar</span><i class="material-icons">arrow_forward</i></button>
             </form>
             <br>
             <br>
