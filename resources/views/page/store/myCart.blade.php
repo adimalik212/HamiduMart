@@ -1,6 +1,6 @@
 @extends('layout.app')
 @section('konten')
-            <div class="container">
+    <div class="container">
             <div class="subtitle h6">
                 <div class="d-inline-block">
                     {{-- My Cart --}}
@@ -87,7 +87,6 @@
                             <h5 class="mb-0">-$100.00</h5>
                         </div>
                     </div>
-
                 </div>
             </div> --}}
             <div class="card mb-4 border-0 shadow-sm">
@@ -95,9 +94,9 @@
                     <p class="text-secondary my-1">Total</p>
                         <h3 class="mb-0">@rupiah($pilih->sum('total'))</h3>
                     <br>
-                    <a href="/bayar" class="btn btn-lg btn-default text-white btn-block btn-rounded shadow"><span>Bayar</span><i class="material-icons">arrow_forward</i></a>
+                    <a href="/bayar" type="submit" class="btn btn-lg btn-default text-white btn-block btn-rounded shadow">
+                        <span>Pesan</span><i class="material-icons">arrow_forward</i></a>
                 </div>
             </div>
-            
-
+        </div>
 @endsection

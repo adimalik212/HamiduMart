@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\pilih;
+use App\bayar;
 use App\lapak;
 use App\store;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ class pilihs extends Controller
     public function index()
     {
         $lapak = lapak::where('user_id', session('id'))->first();
-        $pilih = pilih::where('pembeli', session('id'))->get();
+        $pilih = pilih::where('pembeli', session('id'))->where('status', null)->get();
         $store = store::all();
         $lpk = lapak::all();
         return view('page.store.myCart', compact('lapak','pilih','store','lpk'));
@@ -42,16 +43,24 @@ class pilihs extends Controller
      */
     public function store(Request $request)
     {
-            $data = array (
-                'id' => uuid::uuid4(),
-                'barang_id' => $request->barang_id,
-                'harga' => $request->harga,
-                'jumlah' => '1',
-                'total' => $request->harga * 1,
-                'pembeli' => session('id'),
-            );
-            pilih::create($data);
-            return redirect('myCart');
+        // $kode = time();
+        $data = array (
+            'id' => uuid::uuid4(),
+            'barang_id' => $request->barang_id,
+            'harga' => $request->harga,
+            'jumlah' => '1',
+            'total' => $request->harga * 1,
+            'pembeli' => session('id'),
+            // 'kode' => $kode,
+        );
+        // $bayar = array (
+        //     'id' => uuid::uuid4(),
+        //     'kode' => $kode,
+        // );
+
+        pilih::create($data);
+        // bayar::create($bayar);
+        return redirect('myCart');
     }
 
     /**
@@ -62,7 +71,11 @@ class pilihs extends Controller
      */
     public function show(pilih $pilih)
     {
-        //
+        $lapak = lapak::where('user_id', session('id'))->first();
+        $pilih = pilih::where('pembeli', session('id'))->where('status', null)->get();
+        $store = store::all();
+        $lpk = lapak::all();
+        return view('page.store.bayar', compact('lapak','pilih','store','lpk'));
     }
 
     /**

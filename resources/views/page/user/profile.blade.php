@@ -5,8 +5,8 @@
         <div class="figure-profile shadow my-4">
             <figure><img src="img/user1.png" alt=""></figure>
         </div>
-        <h3 class="mb-1 ">Ammy Jahnson</h3>
-        <p class="text-secondary">Sydney, Australia</p>
+        <h3 class="mb-1 ">{{$lapak->pemilik}}</h3>
+        <p class="text-secondary">{{$lapak->kec}}, {{$lapak->kab}}</p>
     </div>
     <br>
     <div class="card mb-4 border-0 shadow-sm">
@@ -14,21 +14,21 @@
             <div class="row">
                 <div class="col-auto">
                     <span class="btn btn-default p-3 btn-rounded-15">
-                        <i class="material-icons">account_balance_wallet</i>
+                        <i class="material-icons">store_mall_directory</i>
                     </span>
                 </div>
                 <div class="col pl-0">
-                    <p class="text-secondary mb-1">Balance Available</p>
-                    <h4 class="text-dark my-0">$2585</h4>
+                    <p class="text-secondary mb-1">Nama Lapak</p>
+                    <h4 class="text-dark my-0">{{$lapak->namaLapak}}</h4>
                 </div>
                 <div class="col-auto pl-0 align-self-center">
-                    <button class="btn btn-default button-rounded-36 shadow"><i class="material-icons">add</i></button>
+                    <a href="/editProfile/{{$lapak->id}}" class="btn btn-default button-rounded-36 shadow"><i class="material-icons">update</i></a>
                 </div>
             </div>
         </div>
     </div>
 
-    <nav>
+    {{-- <nav>
         <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
             <a class="nav-item nav-link text-left active" id="nav-delivery-tab" data-toggle="tab" href="#nav-delivery" role="tab" aria-controls="nav-delivery" aria-selected="true">
                 <div class="row">
@@ -116,47 +116,33 @@
             </ul>
         </div>
     </div>
-
-    <h6 class="subtitle">Friends</h6>
-    <div class="row mb-4">
-        <div class="col-12">
-            <figure class="avatar avatar-50">
-                <img src="img/user2.png" alt="">
-            </figure>
-            <figure class="avatar avatar-50">
-                <img src="img/user3.png" alt="">
-            </figure>
-            <figure class="avatar avatar-50">
-                <img src="img/user4.png" alt="">
-            </figure>
-            <figure class="avatar avatar-50">
-                <img src="img/user1.png" alt="">
-            </figure>
-            <div class="avatar avatar-50">
-                <a class="d-block" href="#">
-                    <h5 class="text-template mb-0">46</h5>
-                    <p class="small d-block text-secondary">More</p>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <h6 class="subtitle">Contact Information</h6>
+    <br> --}}
+    <h6 class="subtitle">Informasi Kontak</h6>
     <dl class="row mb-4">
         <dt class="col-3 text-secondary font-weight-normal">Email</dt>
-        <dd class="col-9">ammyjohnson@maxartkiller.com</dd>
-        <dt class="col-3 text-secondary font-weight-normal">Phone</dt>
-        <dd class="col-9">55 5555 555555 55</dd>
+        <dd class="col-9">: {{session('email')}}</dd>
+        <dt class="col-3 text-secondary font-weight-normal">Nomor HP</dt>
+        <dd class="col-9">: {{$lapak->hp}}</dd>
     </dl>
 
-    <h6 class="subtitle">Address</h6>
-    <p class="mb-4">58, Lajpat Nagar,<br>
-        Holand Street four,<br>
-        Sydney - 25468<br>
-        Australia
-    </p>
+    <h6 class="subtitle">Alamat</h6>
+    <dl class="row mb-4">
+        <dt class="col-3 text-secondary font-weight-normal">Alamat</dt>
+        <dd class="col-9">: {{$lapak->alamat}}</dd>
+        <dt class="col-3 text-secondary font-weight-normal">Kecamatan</dt>
+        <dd class="col-9">: {{$lapak->kec}}</dd>
+        <dt class="col-3 text-secondary font-weight-normal">Kabupaten</dt>
+        <dd class="col-9">: {{$lapak->kab}}</dd>
+        <dt class="col-3 text-secondary font-weight-normal">Provinsi</dt>
+        <dd class="col-9">: {{$lapak->prov}}</dd>
+    </dl>
+    {{-- <p class="mb-4">{{$lapak->alamat}},<br>
+        {{$lapak->kec}},<br>
+        {{$lapak->kab}}<br>
+        {{$lapak->prov}}
+    </p> --}}
     
-    <a href="/editProfile" class="btn btn-lg btn-dark text-white btn-block btn-rounded shadow"><span>Edit Profile</span><i class="material-icons">arrow_forward</i></a>
+    <a href="/editProfile/{{$lapak->id}}" class="btn btn-lg btn-dark text-white btn-block btn-rounded shadow"><span>Edit Profile</span><i class="material-icons">arrow_forward</i></a>
     <br>
 </div>
 @endsection

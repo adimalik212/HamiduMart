@@ -15,7 +15,7 @@
         <div class="figure-menu shadow">
             <figure><img src="/img/user1.png" alt=""></figure>
         </div>
-        <h5 class="mb-1 ">{{session('name')}}</h5>
+        <h5 class="mb-1 ">{{$lapak->pemilik}}</h5>
         {{-- <p class="text-mute small">{{session('name')}}_olshop</p> --}}
     </div>
     <br>
@@ -35,7 +35,7 @@
                             @endif
                         </div>
                         <div class="col-auto">
-                            <a href="#lapak" data-toggle="modal" class="btn btn-default button-rounded-36 shadow"><i class="material-icons">update</i></a>
+                            <a class="btn btn-default button-rounded-36 shadow"><i class="material-icons">store_mall_directory</i></a>
                         </div>
                     </div>
                 </div>
@@ -46,7 +46,10 @@
                 <a href="/store" class="list-group-item list-group-item-action">Store</a>
                 <a href="/kategori" class="list-group-item list-group-item-action">Kategori</a>
                 <a href="/profile" class="list-group-item list-group-item-action">My Profile</a>
-                <a href="/myProduct" class="list-group-item list-group-item-action">My Product</a>
+                @if ($lapak->namaLapak == null)
+                @else
+                    <a href="/myProduct" class="list-group-item list-group-item-action">My Product</a>
+                @endif
                 {{-- <a href="setting.html" class="list-group-item list-group-item-action">Settings</a> --}}
                 <a href="/logout" class="list-group-item list-group-item-action mt-4">Logout</a>
             </div>
@@ -55,7 +58,7 @@
 </div>
 {{-- @section('script') --}}
     <!-- Modal -->
-    <div class="modal fade" id="lapak" tabindex="-1" role="dialog" aria-hidden="true">
+    {{-- <div class="modal fade" id="lapak" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
             <div class="modal-content shadow">
                 <div class="modal-header">
@@ -79,5 +82,5 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> --}}
 {{-- @endsection --}}

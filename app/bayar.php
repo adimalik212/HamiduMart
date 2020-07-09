@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class pilih extends Model
+class bayar extends Model
 {
     protected $fillable = [
-        'id','barang_id','harga','jumlah','total','pembeli','kode','status'
+        'id','kode','total','alamat','status'
     ];
     public $incrementing = false;
 }

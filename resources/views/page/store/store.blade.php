@@ -32,7 +32,7 @@
                             <p class="text-secondary small text-mute mb-0">{{$s->bobot}}.0 {{$s->volume}}</p>
                             <p class="text-secondary small text-mute mb-0">{{$lapak->kec}}</p>
 
-                            @forelse ($pilih->where('barang_id', $s->id)->where('pembeli', session('id')) as $o)
+                            @forelse ($pilih->where('barang_id', $s->id)->where('status', null)->where('pembeli', session('id')) as $o)
                                 <form action="/pilih/{{$o->id}}" method="post"> @csrf @method('patch')
                                 <button class="btn btn-danger button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">shopping_cart</i></button>
                                 </form>

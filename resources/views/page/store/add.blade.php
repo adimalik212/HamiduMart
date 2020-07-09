@@ -11,7 +11,7 @@
                     </div>
                 </div>
             </div>
-            <h6 class="subtitle">Jual Barang Baru</h6>
+            <h6 class="subtitle">Nama Barang</h6>
             <div class="row">
                 <div class="col-12 col-md-6">
                     <div class="form-group float-label">

@@ -1,83 +1,103 @@
 @extends('layout.app')
 @section('konten')
     <div class="container">
-
-        <div class="card border-0 shadow-sm mt-3">
-            <div class="card-body">
-                <div class="row ">
-                    <div class="col-4">
-                        <p class="text-secondary mb-1 small">Sub Total</p>
-                        <h5 class="mb-0">$360.00</h5>
-                    </div>
-                    <div class="col-4 text-center">
-                        <p class="text-secondary mb-1 small">Tax</p>
-                        <h5 class="mb-0">$40.00</h5>
-                    </div>
-                    <div class="col-4 text-right">
-                        <p class="text-secondary mb-1 small">Discount</p>
-                        <h5 class="mb-0">-$100.00</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card mb-4 border-0 shadow-sm border-top-dashed">
+        <form action="/bayar" method="post"> @csrf
+        <br>
+        <div class="card mb-4 border-0 shadow-sm">
             <div class="card-body text-center">
-                <p class="text-secondary my-1">Net Payable</p>
-                <h3 class="mb-0">$400.00</h3>
+                <p class="text-secondary my-1">Jumlah yang Harus diBayar</p>
+                <h3 class="mb-0">@rupiah($pilih->sum('total'))</h3>
+                <input type="hidden" value="@rupiah($pilih->sum('total'))" name="total">
             </div>
         </div>
 
-        <p class="text-center text-secondary mb-0">Pay with</p>
+        <p class="text-center text-secondary mb-3">dengan</p>
 
-        <div class="btn-group mt-4 w-100" role="group" aria-label="Basic example">
-            <a href="#" class="btn btn-light active">Credit Card</a>
-            <a href="#" class="btn btn-light">PayPal</a>
-        </div>
-
-        <h6 class="subtitle">Card Information</h6>
-        <div class="form-group float-label active">
-            <input type="text" class="form-control" required="" value="Ammy Johnson">
-            <label class="form-control-label">Card Holder Name</label>
-        </div>
-        <div class="form-group float-label active">
-            <input type="text" class="form-control card-type" required="" value="D000 000O  0000 O000">
-            <label class="form-control-label">Card Number</label>
-        </div>
-        <div class="row">
-            <div class="col-6">
-                <div class="form-group float-label active">
-                    <input type="text" class="form-control" required="" value="154">
-                    <label class="form-control-label">CVV</label>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="form-group float-label active">
+        <nav>
+            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link text-left active" id="nav-delivery-tab" data-toggle="tab" href="#nav-delivery" role="tab" aria-controls="nav-delivery" aria-selected="true">
                     <div class="row">
-                        <div class="col">
-                            <input type="text" class="form-control" required="" value="05">
-                        </div>
-                        <div class="col">
-                            <input type="text" class="form-control" required="" value="2025">
+                        <div class="col pl-2">
+                            <p class="text-secondary mb-0 text-center">Rincian Barang</p>
+                            {{-- <h6 class="text-dark my-0">4</h6> --}}
                         </div>
                     </div>
-
-                    <label class="form-control-label">Expiry Date</label>
-                </div>
+                </a>
+                <a class="nav-item nav-link text-left" id="nav-booking-tab" data-toggle="tab" href="#nav-booking" role="tab" aria-controls="nav-booking" aria-selected="false">
+                    <div class="row">
+                        <div class="col pl-2">
+                            <p class="text-secondary mb-0 text-center">Alamat Pengiriman</p>
+                            {{-- <h6 class="text-dark my-0">25</h6> --}}
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-delivery" role="tabpanel" aria-labelledby="nav-delivery-tab">
+                <ul class="list-items">
+                    @foreach ($pilih as $p)
+                    @foreach ($store->where('id', $p->barang_id) as $s)
+                    <input type="hidden" value="{{$p->kode}}" name="kode">
+                    <li>
+                        <div class="row">
+                            <div class="col">{{$s->namaBarang}}</div>
+                            <div class="col-auto"><a href="#">{{$p->jumlah}} x {{$s->harga}} = {{$p->total}}</a></div>
+                        </div>
+                    </li>
+                    @endforeach
+                    @endforeach
+                </ul>
+            </div>
+            <div class="tab-pane fade" id="nav-booking" role="tabpanel" aria-labelledby="nav-booking-tab">
+                <ul class="list-items">
+                    <li>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group float-label active">
+                                    <input type="text" class="form-control" required name="alamat" value="{{$lapak->alamat}}">
+                                    <label class="form-control-label">Alamat</label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group float-label active">
+                                    <input type="text" class="form-control" required name="kec" value="{{$lapak->kec}}">
+                                    <label class="form-control-label">Kecamatan</label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group float-label active">
+                                    <input type="text" class="form-control" required name="kab" value="{{$lapak->kab}}">
+                                    <label class="form-control-label">Kabupaten</label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group float-label active">
+                                    <input type="text" class="form-control" required name="prov" value="{{$lapak->prov}}">
+                                    <label class="form-control-label">Provinsi</label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="form-group float-label active">
-            <select class="form-control">
-                <option>Australia</option>
-                <option>America</option>
-                <option>Africa</option>
-                <option>France</option>
-            </select>
-            <label class="form-control-label">Country</label>
-        </div>
-
-        <a href="/tankyou" class="btn btn-lg btn-default text-white btn-block btn-rounded shadow"><span>Pay Now</span><i class="material-icons">arrow_forward</i></a>
+        <br>
+        <button type="submit" class="btn btn-lg btn-default text-white btn-block btn-rounded shadow"><span>Bayar</span><i class="material-icons">arrow_forward</i></button>
         <br>
         <br>
-
+        </form>
     </div>
 @endsection

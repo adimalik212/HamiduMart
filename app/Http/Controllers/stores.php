@@ -88,7 +88,7 @@ class stores extends Controller
             'volume' => $request->volume,
             'kondisi' => $request->kondisi,
             'deskripsi' => $request->deskripsi,
-            // 'photo' => $request->photo,
+            'photo' => $request->photo,
             'url' => str::slug($request->namBarang)
         );
 

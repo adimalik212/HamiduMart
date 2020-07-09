@@ -43,14 +43,14 @@
                 </div>
                 <div class="col-auto align-self-center">
                 @forelse ($pilih->where('barang_id', $store->id)->where('pembeli', session('id')) as $o)
-                    <form action="/pilih/{{$o->id}}" method="post"> @csrf @method('patch')
-                        <button class="btn btn-lg btn-danger shadow btn-rounded">Add <i class="material-icons md-18">shopping_cart</i></button>
+                    <form action="/myCart" method="get">
+                        <button class="btn btn-lg btn-danger shadow btn-rounded">diPilih <i class="material-icons md-18">shopping_cart</i></button>
                     </form>
                 @empty                                
                     <form action="/pilih" method="post"> @csrf
                     <input type="hidden" name="barang_id" value="{{$store->id}}">
                     <input type="hidden" name="harga" value="{{$store->harga}}">
-                    <button class="btn btn-lg btn-default shadow btn-rounded">Add <i class="material-icons md-18">shopping_cart</i></button>
+                    <button class="btn btn-lg btn-default shadow btn-rounded">Pilih <i class="material-icons md-18">shopping_cart</i></button>
                     </form>
                 @endforelse
                     {{-- <button class="btn btn-lg btn-default shadow btn-rounded">aad<i class="material-icons md-18">shopping_cart</i></button> --}}
@@ -117,7 +117,7 @@
                 @endif
             @endforeach
 
-            <h6 class="subtitle">Komentar</h6>
+            <h6 class="subtitle text-center">Komentar</h6>
             <p class="text-center">
                 <i class="material-icons h3 text-warning vm">star</i>
                 <i class="material-icons h3 text-warning vm">star</i>
