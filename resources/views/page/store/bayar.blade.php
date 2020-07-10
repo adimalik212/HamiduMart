@@ -39,6 +39,7 @@
                     @foreach ($pilih as $p)
                     @foreach ($store->where('id', $p->barang_id) as $s)
                     <input type="hidden" value="{{$p->kode}}" name="kode">
+                    <input type="hidden" value="{{$lapak->user_id}}" name="penjual">
                     <li>
                         <div class="row">
                             <div class="col">{{$s->namaBarang}}</div>

@@ -44,7 +44,7 @@
                             <p class="text-secondary small text-mute mb-0">{{$s->bobot}}.0 {{$s->volume}}</p>
                             <p class="text-secondary small text-mute mb-0">{{$lapak->kec}}</p>
                             
-                            @forelse ($pilih->where('barang_id', $s->id)->where('pembeli', session('id')) as $o)
+                            @forelse ($pilih->where('barang_id', $s->id)->where('status', null)->where('pembeli', session('id')) as $o)
                                 <form action="/pilih/{{$o->id}}" method="post"> @csrf @method('patch')
                                 <button class="btn btn-danger button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">shopping_cart</i></button>
                                 </form>
@@ -204,8 +204,8 @@
                 <div class="card shadow-sm border-0 mb-4">
                     <div class="card-body">
                         <i class="material-icons mb-4 md-36 text-template">local_florist</i>
-                        <h2>1542</h2>
-                        <p class="text-secondary text-mute">Eco environment</p>
+                        <h2>{{$bayar->count()}}</h2>
+                        <p class="text-secondary text-mute">Transaksi</p>
                     </div>
                 </div>
             </div>

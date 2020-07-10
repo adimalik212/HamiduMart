@@ -5,7 +5,7 @@
         <div class="subtitle h6">
             <div class="d-inline-block">
                 Jumlah Barang<br>
-                <p class="small text-mute">{{$store->count()}} Product</p>
+                <p class="small text-mute">{{$store->where('lapak_id', $lapak->id)->count()}} Product</p>
             </div>
             <div class="float-right">
                 <div class="btn-group" role="group" aria-label="Basic example">
@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="row">
-            @foreach ($store as $s)
+            @foreach ($store->where('lapak_id', $lapak->id) as $s)
             <div class="col-12 col-lg-6">
                 <div class="card shadow-sm border-0 mb-4">
                     <div class="card-body">

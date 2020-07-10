@@ -94,8 +94,13 @@
                     <p class="text-secondary my-1">Total</p>
                         <h3 class="mb-0">@rupiah($pilih->sum('total'))</h3>
                     <br>
-                    <a href="/bayar" type="submit" class="btn btn-lg btn-default text-white btn-block btn-rounded shadow">
+                    @if ($pilih->sum('total') == '0')
+                    <a href="/store" type="submit" class="btn btn-lg btn-default text-white btn-block btn-rounded shadow">
                         <span>Pesan</span><i class="material-icons">arrow_forward</i></a>
+                    @else                    
+                        <a href="/bayar" type="submit" class="btn btn-lg btn-default text-white btn-block btn-rounded shadow">
+                            <span>Pesan</span><i class="material-icons">arrow_forward</i></a>
+                    @endif
                 </div>
             </div>
         </div>

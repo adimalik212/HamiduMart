@@ -36,8 +36,9 @@ route::group([], function () {
     $kateg = App\kategori::all();
     $store = App\store::all();
     $user = App\user::all();
+    $bayar = App\bayar::all();
     $pilih = App\pilih::where('pembeli', session('id'))->get();
-    return view('page/index', compact('lapak','kateg','store','user','pilih'));
+    return view('page/index', compact('lapak','kateg','store','user','pilih','bayar'));
   });
   Route::get('store','stores@index');
   Route::get('myProduct','stores@product');
@@ -62,6 +63,7 @@ route::group([], function () {
   Route::delete('pilih/{pilih}', 'pilihs@destroy');
   
   Route::post('bayar', 'bayars@store');
+  Route::get('transaksi', 'bayars@index');
 
   Route::get('tankyou',function(){
     $lapak = App\lapak::where('user_id', session('id'))->first();

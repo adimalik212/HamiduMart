@@ -48,10 +48,12 @@
                 <a href="/profile" class="list-group-item list-group-item-action">My Profile</a>
                 @if ($lapak->namaLapak == null)
                 @else
-                    <a href="/myProduct" class="list-group-item list-group-item-action">My Product</a>
+                <a href="/myProduct" class="list-group-item list-group-item-action">My Product</a>
                 @endif
+                <a href="/transaksi" class="list-group-item list-group-item-action">Transaksi</a>
                 {{-- <a href="setting.html" class="list-group-item list-group-item-action">Settings</a> --}}
                 <a href="/logout" class="list-group-item list-group-item-action mt-4">Logout</a>
+                <br>
             </div>
         </div>
     </div>

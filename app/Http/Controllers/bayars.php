@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\bayar;
 use App\pilih;
 use App\lapak;
+use App\store;
 use Illuminate\Http\Request;
 use Ramsey\Uuid\Uuid;
 
@@ -17,7 +18,12 @@ class bayars extends Controller
      */
     public function index()
     {
-        //
+        $lapak = lapak::where('user_id', session('id'))->first();
+        $store = store::all();
+        $pilih = pilih::all();
+        $pembeli = bayar::where('pembeli', session('id'))->get();
+        $penjual = bayar::where('penjual', session('id'))->get();
+        return view('page.store.transaksi', compact('lapak','store','pilih','pembeli','penjual'));
     }
 
     /**
@@ -55,6 +61,8 @@ class bayars extends Controller
         $alamat = $request->alamat.', '.$request->kec.', '.$request->kab.', '.$request->prov;
         $bayar = array (
             'id' => uuid::uuid4(),
+            'pembeli' => session('id'),
+            'penjual' => $request->penjual,
             'total' => $request->total,
             'alamat' => $alamat,
             'status' => 'diPesan',
@@ -65,10 +73,12 @@ class bayars extends Controller
             'status' => 'diPesan',
             'kode' => 'HM-'.$kode,
         );
+
         bayar::create($bayar);
         pilih::where('kode', null)->update($pilih);
         lapak::where('user_id', session('id'))->update($lapak);
-        return redirect('myCart');
+        return redirect('myCart'); 
+
     }
 
     /**

@@ -22,7 +22,7 @@
                     <div class="card shadow-sm border-0 mb-4">
                         <div class="card-body">
                             <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
-                            <div class="badge badge-success float-right mt-1">10% off</div>
+                            <a href="" target="_blank"><div class="badge badge-primary float-right mt-1">WhattApp</div></a>
                             
                             <figure class="product-image"><img src="/img/apple.png" alt="" class=""></figure>
                             
