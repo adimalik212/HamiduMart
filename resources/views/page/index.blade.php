@@ -14,11 +14,11 @@
                             <div class="card shadow-sm border-0">
                                 <div class="card-body">
                                     <div class="row no-gutters h-100">
-                                        <img src="img/orange.png" alt="" class="small-slide-right">
+                                        <img src="img/{{$k->img}}" alt="" class="small-slide-right">
                                         <div class="col-8">
                                             {{-- <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button> --}}
-                                            <a href="/store" class="text-dark mb-1 mt-2 h6 d-block">{{$k->kategori}}</a>
-                                            <p class="text-secondary small">Dari, Oleh, Untuk Hamidu</p>
+                                            <a href="/store" class="text-dark mb-1 mt-0 h6 d-block">{{$k->kategori}}</a>
+                                            {{-- <p class="text-secondary small">Dari, Oleh, Untuk Hamidu</p> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -177,8 +177,8 @@
     <div class="container mb-3">
         <div class="row">
             <div class="col text-center">
-                <h5 class="subtitle mb-1">Most Exciting Feature</h5>
-                <p class="text-secondary">Take a look at our services</p>
+                <h5 class="subtitle mb-1">HamiduMart</h5>
+                <p class="text-secondary">dari Hamidu, oleh Hamidu, untuk Hamidu</p>
             </div>
         </div>
         <div class="row text-center mt-4">

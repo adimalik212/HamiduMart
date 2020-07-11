@@ -7,6 +7,7 @@ use App\user;
 use Illuminate\Http\Request;
 use Ramsey\Uuid\Uuid;
 use Illuminate\Support\Str;
+use Intervention\Image\ImageManagerStatic as image;
 
 class lapaks extends Controller
 {
@@ -84,7 +85,28 @@ class lapaks extends Controller
             'kab' => 'required|string',
             'prov' => 'required|string',
         ]);
-
+        if (! $request->photo == '') {
+            $image_path = "img_user/".$lapak->photo;
+            if (file_exists($image_path)) {
+                @unlink($image_path);
+                $file=$request->file('photo');
+                $name = rand() . '.' . $file->getClientOriginalExtension();
+        
+                $thumbnailpath = public_path('img_user/'.$name);
+                $img = Image::make($file)->resize(500, 500, function($contan){ $contan->aspectRatio();});
+                $img->save($thumbnailpath);
+            }else {
+                $file=$request->file('photo');
+                $name = rand() . '.' . $file->getClientOriginalExtension();
+        
+                $thumbnailpath = public_path('img_user/'.$name);
+                $img = Image::make($file)->resize(500, 500, function($contan){ $contan->aspectRatio();});
+                $img->save($thumbnailpath);
+            }
+        } else {
+            $name = $lapak->photo;
+        }
+        
         $data = array(
             'pemilik' => ucwords($request->pemilik),
             'hp' => $request->hp,
@@ -94,6 +116,7 @@ class lapaks extends Controller
             'kab' => ucwords($request->kab),
             'prov' => ucwords($request->prov),
             'url' => Str::slug($request->namaLapak),
+            'photo' => $name,
         );
         $email = array(  
             'name' => $request->pemilik,

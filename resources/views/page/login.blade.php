@@ -32,7 +32,7 @@
 
             <div class="row">
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-lg btn-success btn-rounded shadow"><span>Sign in</span><i class="material-icons">arrow_forward</i></button>
+                    <button type="submit" class="btn btn-lg btn-success btn-rounded shadow" id="login"><span>Sign in</span><i class="material-icons">arrow_forward</i></button>
                 </div>
                 <div class="col align-self-center text-right pl-0">
                     <a href="#">Forgot Password?</a>

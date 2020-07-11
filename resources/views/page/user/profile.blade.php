@@ -3,7 +3,7 @@
 <div class="container">
     <div class="text-center">
         <div class="figure-profile shadow my-4">
-            <figure><img src="img/user1.png" alt=""></figure>
+            <figure><img src="/img_user/{{$lapak->photo}}" alt=""></figure>
         </div>
         <h3 class="mb-1 ">{{$lapak->pemilik}}</h3>
         <p class="text-secondary">{{$lapak->kec}}, {{$lapak->kab}}</p>

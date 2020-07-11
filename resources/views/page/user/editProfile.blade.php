@@ -1,13 +1,13 @@
 @extends('layout.app')
 @section('konten')
     <div class="container">
-        <form action="/editProfile/{{$lapak->id}}" method="post"> @csrf @method('patch')
+        <form action="/editProfile/{{$lapak->id}}" method="post" enctype="multipart/form-data"> @csrf @method('patch')
             <div class="text-center">
                 <div class="figure-profile shadow my-4">
-                    <figure><img src="/img/user1.png" alt=""></figure>
+                    <figure><img src="/img_user/{{$lapak->photo}}" alt=""></figure>
                     <div class="btn btn-dark text-white floating-btn">
                         <i class="material-icons">camera_alt</i>
-                        <input type="file" class="float-file">
+                        <input type="file" class="float-file" name="photo">
                     </div>
                 </div>
             </div>

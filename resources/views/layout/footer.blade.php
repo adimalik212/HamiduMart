@@ -23,7 +23,7 @@
                     </a>
                 </div>
                 <div class="col-auto">
-                    <a href="/profile" class="btn btn-link-default active">
+                    <a href="/profile" class="btn btn-link-default">
                         <i class="material-icons">account_circle</i>
                     </a>
                 </div>

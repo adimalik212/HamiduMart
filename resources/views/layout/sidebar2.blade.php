@@ -13,7 +13,7 @@
 <div class="sidebar">
     <div class="text-center">
         <div class="figure-menu shadow">
-            <figure><img src="/img/user1.png" alt=""></figure>
+            <figure><img src="/img_user/{{$lapak->photo}}" alt=""></figure>
         </div>
         <h5 class="mb-1 ">{{$lapak->pemilik}}</h5>
         {{-- <p class="text-mute small">{{session('name')}}_olshop</p> --}}

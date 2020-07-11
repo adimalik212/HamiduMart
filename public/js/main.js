@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
     /* Browser fullscreen experience on double click */
+
     if (self == top) {
         $('body').on('dblclick', function (e) {
 
@@ -29,7 +30,7 @@ $(document).ready(function () {
 
         });
     } else {
-        
+
     }
 
 
