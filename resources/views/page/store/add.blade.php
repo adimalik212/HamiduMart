@@ -3,10 +3,13 @@
     <div class="container">
         <form action="addStorePost" method="post"> @csrf
             <div class="text-center">
-                <div class="figure-profile shadow my-4">
-                    <figure><img src="img/user1.png" alt=""></figure>
+                <div class="  my-4">
+                    {{-- <figure><img src="img/user1.png" alt=""></figure> --}}
                     <div class="btn btn-dark text-white floating-btn">
-                        <i class="material-icons">camera_alt</i>
+                    <figure class="avatar shadow avatar-100">
+                        <img src="img/user2.png" alt="">
+                    </figure>
+                        {{-- <i class="material-icons">camera_alt</i> --}}
                         <input type="file" class="float-file" name="photo">
                     </div>
                 </div>

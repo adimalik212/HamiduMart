@@ -13,7 +13,7 @@
 <div class="sidebar">
     <div class="text-center">
         <div class="figure-menu shadow">
-            <figure><img src="/img/user1.png" alt=""></figure>
+            <figure><img src="/img_user/{{$lapak->photo}}" alt=""></figure>
         </div>
         <h5 class="mb-1 ">{{session('name')}}</h5>
     </div>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\lapak;
 use App\user;
+use App\store;
+use App\pilih;
 use Illuminate\Http\Request;
 use Ramsey\Uuid\Uuid;
 use Illuminate\Support\Str;
@@ -49,9 +51,13 @@ class lapaks extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(lapak $lapak)
     {
-        //
+        $lpk = lapak::where('id', $lapak->id)->first();
+        $lapak = lapak::where('user_id', session('id'))->first();
+        $store = store::all();
+        $pilih = pilih::all();
+        return view('page.user.profileLapak', compact('lapak','lpk','store','pilih'));
     }
 
     /**
@@ -125,7 +131,7 @@ class lapaks extends Controller
 
         lapak::where('id', $lapak->id)->update($data);
         user::where('id', $lapak->user_id)->update($email);
-        return redirect('profile');
+        return redirect('/profile');
     }
 
     /**

@@ -35,11 +35,12 @@ route::group([], function () {
     $lapak = App\lapak::where('user_id', session('id'))->first();
     $kateg = App\kategori::all();
     $store = App\store::all();
-    $user = App\user::all();
+    $user = App\User::all();
     $bayar = App\bayar::all();
     $pilih = App\pilih::where('pembeli', session('id'))->get();
     return view('page/index', compact('lapak','kateg','store','user','pilih','bayar'));
   });
+  Route::get('cari','stores@pencarian');
   Route::get('store','stores@index');
   Route::get('myProduct','stores@product');
   Route::get('addStore','stores@addStore');
@@ -50,6 +51,7 @@ route::group([], function () {
   Route::delete('deleteStore/{store}','stores@destroy');
   
   Route::get('profile', 'lapaks@index');
+  Route::get('lapak/{lapak}', 'lapaks@show');
   Route::get('editProfile/{lapak}', 'lapaks@edit');
   Route::patch('editProfile/{lapak}', 'lapaks@update');
 

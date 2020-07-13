@@ -2,8 +2,10 @@
 @section('konten')
 
     <div class="container">
-        <input type="text" class="form-control form-control-lg search my-3" placeholder="Search">
-
+        <form action="/cari" method="get"> @csrf
+            <input type="text" class="form-control form-control-lg search my-3" placeholder="Search" name="cari">
+            <button type="submit" hidden>Cari</button>
+        </form>
         <h6 class="subtitle">Kategori</h6>
         <div class="row">
             <!-- Swiper -->

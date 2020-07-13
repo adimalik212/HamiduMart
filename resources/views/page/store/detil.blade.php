@@ -21,7 +21,7 @@
 
 
             <a href="javascript:void(0)" class="btn btn-sm btn-default btn-rounded" data-toggle="modal" data-target="#share"><i class="material-icons mb-18 mr-2">share</i>Share</a>
-            <a href="#" class="btn btn-sm badge btn-primary float-right mt-1">{{$lapak->namaLapak}}</a>
+            <a href="/lapak/{{$store->lapak_id}}" class="btn btn-sm badge btn-primary float-right mt-1">Pelapak</a>
 
             <p class="text-secondary my-3 small">
                 <i class="material-icons text-warning md-18 vm">star</i>

@@ -8,19 +8,101 @@
 
         <div class="subtitle h6">
             <div class="d-inline-block">
-                Semua Barang
+                Hasil pencarian : <strong>{{$search}}</strong>
                 {{-- <p class="small text-mute">2154 products</p> --}}
             </div>
             <div class="float-right">
                 <div class="btn-group filter-group" role="group" aria-label="Basic example">
-                    {{$store->count()}} Product
+                    Brg : <strong> {{ $cari->count()}}</strong> | Lpk : <strong> {{ $cari2->count()}}</strong>
                     {{-- <a href="all-products.html" class="btn btn-light active"><i class="material-icons">view_module</i></a> --}}
                     {{-- <a href="all-products-list.html" class="btn btn-light"><i class="material-icons">view_list</i></a> --}}
                 </div>
             </div>
         </div>
-        <div class="row">
-            @foreach ($store->take(6) as $s)
+        <nav>
+            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link text-left active" id="nav-delivery-tab" data-toggle="tab" href="#nav-delivery" role="tab" aria-controls="nav-delivery" aria-selected="true">
+                    <div class="row">
+                        <div class="col pl-2">
+                            <p class="text-secondary mb-0 text-center">Barang</p>
+                            {{-- <h6 class="text-dark my-0">4</h6> --}}
+                        </div>
+                    </div>
+                </a>
+                <a class="nav-item nav-link text-left" id="nav-booking-tab" data-toggle="tab" href="#nav-booking" role="tab" aria-controls="nav-booking" aria-selected="false">
+                    <div class="row">
+                        <div class="col pl-2">
+                            <p class="text-secondary mb-0 text-center">Lapak</p>
+                            {{-- <h6 class="text-dark my-0">25</h6> --}}
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-delivery" role="tabpanel" aria-labelledby="nav-delivery-tab">
+                <div class="row mt-3">
+                    @foreach ($cari as $s)
+                        <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                            <div class="card shadow-sm border-1 mb-4">
+                                <div class="card-body">
+                                    <button class="btn btn-sm btn-link p-0"><i class="material-icons md-18">favorite_outline</i></button>
+                                    <a href="" target="_blank"><div class="badge badge-primary float-right mt-1">WhattApp</div></a>
+
+                                    <figure class="product-image"><img src="/img/apple.png" alt=""></figure>
+                                    
+                                    <a href="/detilStore/{{$s->id}}" class="text-dark mb-1 mt-2 h6 d-block">{{$s->namaBarang}}</a>
+                                    <p class="text-secondary small mb-2">{{$s->kategori}}</p>
+                                    <h5 class="text-success font-weight-normal mb-2">@rupiah($s->harga)</h5>
+                                    <p class="text-secondary small text-mute mb-0">{{$s->bobot}}.0 {{$s->volume}}</p>
+                                    <p class="text-secondary small text-mute mb-0">{{$lapak->kec}}</p>
+
+                                    @forelse ($pilih->where('barang_id', $s->id)->where('status', null)->where('pembeli', session('id')) as $o)
+                                        <form action="/pilih/{{$o->id}}" method="post"> @csrf @method('patch')
+                                        <button class="btn btn-danger button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">shopping_cart</i></button>
+                                        </form>
+                                    @empty                                
+                                        <form action="/pilih" method="post"> @csrf
+                                        <input type="hidden" name="barang_id" value="{{$s->id}}">
+                                        <input type="hidden" name="harga" value="{{$s->harga}}">
+                                        <button class="btn btn-default button-rounded-36 shadow-sm float-bottom-right"><i class="material-icons md-18">shopping_cart</i></button>
+                                        </form>
+                                    @endforelse
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-booking" role="tabpanel" aria-labelledby="nav-booking-tab">
+                <div class="row mt-3">
+                    @foreach ($cari2 as $s)
+                        <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                            <div class="card shadow-sm border-1 mb-4">
+                                <div class="card-body">
+                                    <a href="" target="_blank"><div class="badge badge-primary float-right mt-1 mb-2">WhattApp</div></a>
+                                    <div class="text-center">
+                                        <figure class="avatar avatar-100">
+                                            <img src="/img_user/{{$s->photo}}" alt="">
+                                        </figure>
+                                    </div>
+                                    {{--  class="text-dark mb-1 mt-2 h6 d-block">{{$s->pemilik}} --}}
+                                    <a href="/lapak/{{$s->id}}"><h5 class="text-success font-weight-normal mb-2 mt-3">{{$s->namaLapak}}</h5></a>
+                                    <p class="text-secondary small my-2">{{$s->pemilik}}</p>
+                                    <p class="text-secondary small text-mute mb-0">{{$s->kec}}</p>
+                                    <p class="text-secondary small text-mute mb-0">{{$s->kab}}</p>
+                                    <a href="/lapak/{{$s->id}}" class="btn btn-success button-rounded-36 shadow-sm float-bottom-right">
+                                        <i class="material-icons md-18 text-white">arrow_forward</i></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+        {{-- <div class="row">
+            @foreach ($cari as $s)
                 <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                     <div class="card shadow-sm border-0 mb-4">
                         <div class="card-body">
@@ -50,7 +132,7 @@
                     </div>
                 </div>
             @endforeach
-        </div>
+        </div> --}}
         {{-- <div class="row">
             <div class="col-12 text-center">
                 <div class="btn btn-default btn-rounded mb-3">

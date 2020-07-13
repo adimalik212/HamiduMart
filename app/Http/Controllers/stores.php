@@ -18,6 +18,25 @@ class stores extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function pencarian(Request $request) {
+        $lapak = lapak::where('user_id', session('id'))->first();
+        $pilih = pilih::all();
+        $cari = store::where('namaBarang','LIKE','%'.$request->cari.'%')
+                ->orWhere('kategori','LIKE','%'.$request->cari.'%')
+                ->orWhere('deskripsi','LIKE','%'.$request->cari.'%')->paginate(6);
+        $cari->appends($request->only('cari'));
+        $search = $request->cari;
+
+        $cari2 = lapak::where('namaLapak','LIKE','%'.$request->cari.'%')
+                ->orWhere('pemilik','LIKE','%'.$request->cari.'%')
+                ->orWhere('kab','LIKE','%'.$request->cari.'%')
+                ->orWhere('kec','LIKE','%'.$request->cari.'%')
+                ->orWhere('prov','LIKE','%'.$request->cari.'%')
+                ->orWhere('alamat','LIKE','%'.$request->cari.'%')->paginate(6);
+        $cari2->appends($request->only('cari'));
+        return view('page.store.pencarian', compact('cari','lapak','search','pilih','cari2'));
+    }
+
     public function index()
     {
         $lapak = lapak::where('user_id', session('id'))->first();

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\user;
+use App\User;
 use App\lapak;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
