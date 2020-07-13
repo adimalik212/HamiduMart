@@ -100,6 +100,8 @@
                     @endforeach
                 </div>
             </div>
+            <div class="mt-2 text-center"></div>{{$cari->onEachSide(1)->links()}}
+            
         </div>
         {{-- <div class="row">
             @foreach ($cari as $s)

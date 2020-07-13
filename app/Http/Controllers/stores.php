@@ -17,6 +17,7 @@ class stores extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * 
      */
     public function pencarian(Request $request) {
         $lapak = lapak::where('user_id', session('id'))->first();

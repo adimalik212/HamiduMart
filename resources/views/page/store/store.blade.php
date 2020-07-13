@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="row">
-            @foreach ($store->take(6) as $s)
+            @foreach ($store as $s)
                 <div class="col-6 col-md-4 col-lg-3 col-xl-2">
                     <div class="card shadow-sm border-0 mb-4">
                         <div class="card-body">
