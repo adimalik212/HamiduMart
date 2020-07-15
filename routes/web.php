@@ -66,6 +66,8 @@ route::group([], function () {
   
   Route::post('bayar', 'bayars@store');
   Route::get('transaksi', 'bayars@index');
+  Route::get('transaksiDetil/{bayar}', 'bayars@show');
+  Route::patch('status/{bayar}', 'bayars@update');
 
   Route::get('tankyou',function(){
     $lapak = App\lapak::where('user_id', session('id'))->first();

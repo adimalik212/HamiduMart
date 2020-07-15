@@ -51,6 +51,13 @@
                 </div>
             @endforeach
         </div>
+        <div class="row">
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="pagination pagination-sm">
+                    {{$store->onEachSide(1)->links()}}
+                </div>
+            </div>
+        </div>
         {{-- <div class="row">
             <div class="col-12 text-center">
                 <div class="btn btn-default btn-rounded mb-3">
@@ -61,7 +68,7 @@
         </div> --}}
     </div>
 
-    <div class="filter">
+    {{-- <div class="filter">
         <button class="btn btn-default filter-btn shadow"><i class="material-icons">filter_list</i></button>
         <div class="container filters-container">
             <div class="subtitle h6">
@@ -128,10 +135,10 @@
             <br>
 
         </div>
-    </div>
+    </div> --}}
 @endsection
 
-@section('script')
+{{-- @section('script')
 <script>
     $(window).on('load', function() {
         var swiper = new Swiper('.small-slide', {
@@ -200,4 +207,4 @@
     });
 
 </script>
-@endsection
+@endsection --}}

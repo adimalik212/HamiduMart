@@ -39,11 +39,13 @@
                     @foreach ($pilih as $p)
                     @foreach ($store->where('id', $p->barang_id) as $s)
                     <input type="hidden" value="{{$p->kode}}" name="kode">
-                    <input type="hidden" value="{{$lapak->user_id}}" name="penjual">
+                    @foreach ($lpk->where('id', $s->lapak_id) as $lpk)
+                        <input type="hidden" value="{{$lpk->user_id}}" name="penjual">
+                    @endforeach
                     <li>
                         <div class="row">
                             <div class="col">{{$s->namaBarang}}</div>
-                            <div class="col-auto"><a href="#">{{$p->jumlah}} x {{$s->harga}} = {{$p->total}}</a></div>
+                            <div class="col-auto"><a href="#"> @rupiah($p->total) ({{$p->jumlah}})</a></div>
                         </div>
                     </li>
                     @endforeach

@@ -24,7 +24,7 @@ class stores extends Controller
         $pilih = pilih::all();
         $cari = store::where('namaBarang','LIKE','%'.$request->cari.'%')
                 ->orWhere('kategori','LIKE','%'.$request->cari.'%')
-                ->orWhere('deskripsi','LIKE','%'.$request->cari.'%')->paginate(6);
+                ->orWhere('deskripsi','LIKE','%'.$request->cari.'%')->paginate(12);
         $cari->appends($request->only('cari'));
         $search = $request->cari;
 
@@ -33,7 +33,7 @@ class stores extends Controller
                 ->orWhere('kab','LIKE','%'.$request->cari.'%')
                 ->orWhere('kec','LIKE','%'.$request->cari.'%')
                 ->orWhere('prov','LIKE','%'.$request->cari.'%')
-                ->orWhere('alamat','LIKE','%'.$request->cari.'%')->paginate(6);
+                ->orWhere('alamat','LIKE','%'.$request->cari.'%')->paginate(12);
         $cari2->appends($request->only('cari'));
         return view('page.store.pencarian', compact('cari','lapak','search','pilih','cari2'));
     }
@@ -41,7 +41,7 @@ class stores extends Controller
     public function index()
     {
         $lapak = lapak::where('user_id', session('id'))->first();
-        $store = store::all();
+        $store = store::paginate(12);
         $pilih = pilih::all();
         return view('page.store.store', compact('lapak','store','pilih'));
     }

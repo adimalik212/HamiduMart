@@ -100,7 +100,11 @@
                     @endforeach
                 </div>
             </div>
-            <div class="mt-2 text-center"></div>{{$cari->onEachSide(1)->links()}}
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-2">
+                <div class="pagination pagination-sm">
+                    {{$cari->onEachSide(1)->links()}}
+                </div>
+            </div>
             
         </div>
         {{-- <div class="row">

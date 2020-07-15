@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\bayar;
+use App\user;
 use App\pilih;
 use App\lapak;
 use App\store;
@@ -21,8 +22,8 @@ class bayars extends Controller
         $lapak = lapak::where('user_id', session('id'))->first();
         $store = store::all();
         $pilih = pilih::all();
-        $pembeli = bayar::where('pembeli', session('id'))->get();
-        $penjual = bayar::where('penjual', session('id'))->get();
+        $pembeli = bayar::where('pembeli', session('id'))->orderBy('created_at','desc')->get();
+        $penjual = bayar::where('penjual', session('id'))->orderBy('created_at','desc')->get();
         return view('page.store.transaksi', compact('lapak','store','pilih','pembeli','penjual'));
     }
 
@@ -77,7 +78,7 @@ class bayars extends Controller
         bayar::create($bayar);
         pilih::where('kode', null)->update($pilih);
         lapak::where('user_id', session('id'))->update($lapak);
-        return redirect('myCart'); 
+        return redirect('transaksi'); 
 
     }
 
@@ -89,7 +90,13 @@ class bayars extends Controller
      */
     public function show(bayar $bayar)
     {
-        //
+        $lapak = lapak::where('user_id', session('id'))->first();
+        $pembeli = bayar::where('id', $bayar->id)->first();
+        $user = user::all();
+        $store = store::all();
+        $pilih = pilih::all();
+        // $penjual = bayar::where('kode', session('id'))->orderBy('created_at','desc')->get();
+        return view('page.store.transaksiDetil', compact('lapak','store','pilih','pembeli','user'));
     }
 
     /**
@@ -112,7 +119,12 @@ class bayars extends Controller
      */
     public function update(Request $request, bayar $bayar)
     {
-        //
+        $data = array (
+            'status' => $request->status,
+        );
+
+        bayar::where('id', $bayar->id)->update($data);
+        return redirect()->back(); 
     }
 
     /**

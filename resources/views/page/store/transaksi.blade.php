@@ -59,7 +59,7 @@
                     @foreach ($pembeli as $b)
                     <li>
                         <div class="row">
-                            <div class="col"><a class="collapsed" data-toggle="collapse" href="#collapseExample">{{$b->kode}}</a> | {{$b->created_at}}</div>
+                            <div class="col"><a href="transaksiDetil/{{$b->id}}">{{$b->kode}}</a> | {{$b->created_at}}</div>
                             <div class="col-auto">{{$b->total}}</div>
                         </div>
                     </li>
@@ -93,12 +93,12 @@
                     @foreach ($penjual as $j)
                     <li>
                         <div class="row">
-                            <div class="col"><a class="collapsed" data-toggle="collapse" href="#penjual">{{$j->kode}}</a> | {{$b->created_at}}</div>
+                            <div class="col"><a href="transaksiDetil/{{$j->id}}">{{$j->kode}}</a> | {{$j->created_at}}</div>
                             <div class="col-auto">{{$j->total}}</div>
                         </div>
                     </li>
-                    <div class="collapse" id="penjual">
-                        @foreach ($pilih->where('kode', $b->kode) as $p)
+                    <div class="collapse" id="penjual{{$j->kode}}">
+                        @foreach ($pilih->where('kode', $j->kode) as $p)
                         @foreach ($store->where('id', $p->barang_id) as $s)
                         <div class="card shadow-sm border-0 mb-1 bg-danger">
                             <div class="card-body p-3">
